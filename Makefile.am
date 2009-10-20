@@ -25,12 +25,15 @@ EXTRA_DIST =			\
 	CHANGES			\
 	version.rc		\
 	VisualC.zip		\
+	VisualCE.zip		\
 	Xcode.tar.gz		\
+	Xcode_iPhone.tar.gz	\
 	MPWmake.sea.bin		\
 	Watcom-OS2.zip		\
 	IMG_xxx.c		\
+	IMG_ImageIO.c		\
+	IMG_UIImage.m		\
 	SDL_image.spec		\
-	SDL_image.spec.in	\
 	gcc-fat.sh		\
 	autogen.sh
 
@@ -48,6 +51,9 @@ libSDL_image_la_LDFLAGS = 	\
 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
 libSDL_image_la_LIBADD = $(IMG_LIBS)
 endif
+
+pkgconfigdir = $(libdir)/pkgconfig
+pkgconfig_DATA = SDL_image.pc
 
 %.o : %.rc
 	$(WINDRES) $< $@

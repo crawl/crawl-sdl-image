@@ -1,6 +1,6 @@
 /*
     SDL_image:  An example image loading library for use with SDL
-    Copyright (C) 1997-2006 Sam Lantinga
+    Copyright (C) 1997-2009 Sam Lantinga
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -31,25 +31,25 @@
 
 /*=============================================================================
         File: SDL_png.c
-     Purpose: A PNG loader and saver for the SDL library      
-    Revision: 
+     Purpose: A PNG loader and saver for the SDL library
+    Revision:
   Created by: Philippe Lavoie          (2 November 1998)
               lavoie@zeus.genie.uottawa.ca
- Modified by: 
+ Modified by:
 
  Copyright notice:
           Copyright (C) 1998 Philippe Lavoie
- 
+
           This library is free software; you can redistribute it and/or
           modify it under the terms of the GNU Library General Public
           License as published by the Free Software Foundation; either
           version 2 of the License, or (at your option) any later version.
- 
+
           This library is distributed in the hope that it will be useful,
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
           Library General Public License for more details.
- 
+
           You should have received a copy of the GNU Library General Public
           License along with this library; if not, write to the Free
           Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
@@ -318,7 +318,7 @@ SDL_Surface *IMG_LoadPNG_RW(SDL_RWops *src)
 	}
 	start = SDL_RWtell(src);
 
-	if ( IMG_InitPNG() < 0 ) {
+	if ( IMG_Init(IMG_INIT_PNG) < 0 ) {
 		return NULL;
 	}
 
@@ -408,7 +408,7 @@ SDL_Surface *IMG_LoadPNG_RW(SDL_RWops *src)
 			&color_type, &interlace_type, NULL, NULL);
 
 	/* Allocate the SDL surface to hold the image */
-	Rmask = Gmask = Bmask = Amask = 0 ; 
+	Rmask = Gmask = Bmask = Amask = 0 ;
 	if ( color_type != PNG_COLOR_TYPE_PALETTE ) {
 		if ( SDL_BYTEORDER == SDL_LIL_ENDIAN ) {
 			Rmask = 0x000000FF;
@@ -473,7 +473,7 @@ SDL_Surface *IMG_LoadPNG_RW(SDL_RWops *src)
 		    palette->colors[i].b = i;
 		}
 	    } else if (info_ptr->num_palette > 0 ) {
-		palette->ncolors = info_ptr->num_palette; 
+		palette->ncolors = info_ptr->num_palette;
 		for( i=0; i<info_ptr->num_palette; ++i ) {
 		    palette->colors[i].b = info_ptr->palette[i].blue;
 		    palette->colors[i].g = info_ptr->palette[i].green;
@@ -497,15 +497,22 @@ done:	/* Clean up and return */
 			SDL_FreeSurface(surface);
 			surface = NULL;
 		}
-		IMG_QuitPNG();
 		IMG_SetError(error);
-	} else {
-		IMG_QuitPNG();
 	}
-	return(surface); 
+	return(surface);
 }
 
 #else
+
+int IMG_InitPNG()
+{
+	IMG_SetError("PNG images are not supported");
+	return(-1);
+}
+
+void IMG_QuitPNG()
+{
+}
 
 /* See if an image is contained in a data source */
 int IMG_isPNG(SDL_RWops *src)

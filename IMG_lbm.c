@@ -1,6 +1,6 @@
 /*
     SDL_image:  An example image loading library for use with SDL
-    Copyright (C) 1997-2006 Sam Lantinga
+    Copyright (C) 1997-2009 Sam Lantinga
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -66,7 +66,7 @@ int IMG_isLBM( SDL_RWops *src )
 	int   is_LBM;
 	Uint8 magic[4+4+4];
 
-	if ( !src ) 
+	if ( !src )
 		return 0;
 	start = SDL_RWtell(src);
 	is_LBM = 0;
@@ -151,7 +151,7 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 
 	while ( memcmp( id, "BODY", 4 ) != 0 )
 	{
-		if ( !SDL_RWread( src, id, 4, 1 ) ) 
+		if ( !SDL_RWread( src, id, 4, 1 ) )
 		{
 			error="error reading IFF chunk";
 			goto done;

@@ -1,6 +1,6 @@
 /*
     SDL_image:  An example image loading library for use with SDL
-    Copyright (C) 1997-2006 Sam Lantinga
+    Copyright (C) 1997-2009 Sam Lantinga
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -67,56 +67,56 @@ int IMG_InitJPG()
 			SDL_UnloadObject(lib.handle);
 			return -1;
 		}
-		lib.jpeg_CreateDecompress = 
+		lib.jpeg_CreateDecompress =
 			(void (*) (j_decompress_ptr, int, size_t))
 			SDL_LoadFunction(lib.handle, "jpeg_CreateDecompress");
 		if ( lib.jpeg_CreateDecompress == NULL ) {
 			SDL_UnloadObject(lib.handle);
 			return -1;
 		}
-		lib.jpeg_destroy_decompress = 
+		lib.jpeg_destroy_decompress =
 			(void (*) (j_decompress_ptr))
 			SDL_LoadFunction(lib.handle, "jpeg_destroy_decompress");
 		if ( lib.jpeg_destroy_decompress == NULL ) {
 			SDL_UnloadObject(lib.handle);
 			return -1;
 		}
-		lib.jpeg_finish_decompress = 
+		lib.jpeg_finish_decompress =
 			(boolean (*) (j_decompress_ptr))
 			SDL_LoadFunction(lib.handle, "jpeg_finish_decompress");
 		if ( lib.jpeg_finish_decompress == NULL ) {
 			SDL_UnloadObject(lib.handle);
 			return -1;
 		}
-		lib.jpeg_read_header = 
+		lib.jpeg_read_header =
 			(int (*) (j_decompress_ptr, boolean))
 			SDL_LoadFunction(lib.handle, "jpeg_read_header");
 		if ( lib.jpeg_read_header == NULL ) {
 			SDL_UnloadObject(lib.handle);
 			return -1;
 		}
-		lib.jpeg_read_scanlines = 
+		lib.jpeg_read_scanlines =
 			(JDIMENSION (*) (j_decompress_ptr, JSAMPARRAY, JDIMENSION))
 			SDL_LoadFunction(lib.handle, "jpeg_read_scanlines");
 		if ( lib.jpeg_read_scanlines == NULL ) {
 			SDL_UnloadObject(lib.handle);
 			return -1;
 		}
-		lib.jpeg_resync_to_restart = 
+		lib.jpeg_resync_to_restart =
 			(boolean (*) (j_decompress_ptr, int))
 			SDL_LoadFunction(lib.handle, "jpeg_resync_to_restart");
 		if ( lib.jpeg_resync_to_restart == NULL ) {
 			SDL_UnloadObject(lib.handle);
 			return -1;
 		}
-		lib.jpeg_start_decompress = 
+		lib.jpeg_start_decompress =
 			(boolean (*) (j_decompress_ptr))
 			SDL_LoadFunction(lib.handle, "jpeg_start_decompress");
 		if ( lib.jpeg_start_decompress == NULL ) {
 			SDL_UnloadObject(lib.handle);
 			return -1;
 		}
-		lib.jpeg_std_error = 
+		lib.jpeg_std_error =
 			(struct jpeg_error_mgr * (*) (struct jpeg_error_mgr *))
 			SDL_LoadFunction(lib.handle, "jpeg_std_error");
 		if ( lib.jpeg_std_error == NULL ) {
@@ -379,7 +379,7 @@ SDL_Surface *IMG_LoadJPG_RW(SDL_RWops *src)
 	}
 	start = SDL_RWtell(src);
 
-	if ( IMG_InitJPG() < 0 ) {
+	if ( IMG_Init(IMG_INIT_JPG) < 0 ) {
 		return NULL;
 	}
 
@@ -394,7 +394,6 @@ SDL_Surface *IMG_LoadJPG_RW(SDL_RWops *src)
 			SDL_FreeSurface(surface);
 		}
 		SDL_RWseek(src, start, SEEK_SET);
-		IMG_QuitJPG();
 		IMG_SetError("JPEG loading error");
 		return NULL;
 	}
@@ -443,7 +442,6 @@ SDL_Surface *IMG_LoadJPG_RW(SDL_RWops *src)
 	if ( surface == NULL ) {
 		lib.jpeg_destroy_decompress(&cinfo);
 		SDL_RWseek(src, start, SEEK_SET);
-		IMG_QuitJPG();
 		IMG_SetError("Out of memory");
 		return NULL;
 	}
@@ -458,12 +456,20 @@ SDL_Surface *IMG_LoadJPG_RW(SDL_RWops *src)
 	lib.jpeg_finish_decompress(&cinfo);
 	lib.jpeg_destroy_decompress(&cinfo);
 
-	IMG_QuitJPG();
-
 	return(surface);
 }
 
 #else
+
+int IMG_InitJPG()
+{
+	IMG_SetError("JPEG images are not supported");
+	return(-1);
+}
+
+void IMG_QuitJPG()
+{
+}
 
 /* See if an image is contained in a data source */
 int IMG_isJPG(SDL_RWops *src)

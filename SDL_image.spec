@@ -1,5 +1,5 @@
 %define name SDL_image
-%define version 1.2.7
+%define version 1.2.8
 %define release 1
 
 Summary: Simple DirectMedia Layer - Sample Image Loading Library
@@ -58,6 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 %{prefix}/lib/lib*.la
 %{prefix}/lib/lib*.so
 %{prefix}/include/SDL/
+%{prefix}/lib/pkgconfig/*.pc
 
 %changelog
 * Wed Jan 19 2000 Sam Lantinga 

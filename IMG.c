@@ -1,6 +1,6 @@
 /*
     SDL_image:  An example image loading library for use with SDL
-    Copyright (C) 1997-2006 Sam Lantinga
+    Copyright (C) 1997-2009 Sam Lantinga
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -38,6 +38,8 @@ static struct {
 } supported[] = {
 	/* keep magicless formats first */
 	{ "TGA", NULL,      IMG_LoadTGA_RW },
+	{ "CUR", IMG_isCUR, IMG_LoadCUR_RW },
+	{ "ICO", IMG_isICO, IMG_LoadICO_RW },
 	{ "BMP", IMG_isBMP, IMG_LoadBMP_RW },
 	{ "GIF", IMG_isGIF, IMG_LoadGIF_RW },
 	{ "JPG", IMG_isJPG, IMG_LoadJPG_RW },
@@ -58,6 +60,61 @@ const SDL_version *IMG_Linked_Version(void)
 	return(&linked_version);
 }
 
+extern int IMG_InitJPG();
+extern int IMG_QuitJPG();
+extern int IMG_InitPNG();
+extern int IMG_QuitPNG();
+extern int IMG_InitTIF();
+extern int IMG_QuitTIF();
+
+static int initialized = 0;
+
+int IMG_Init(int flags)
+{
+#if defined(__APPLE__) && !defined(SDL_IMAGE_USE_COMMON_BACKEND)
+	initialized = IMG_INIT_JPG | IMG_INIT_PNG | IMG_INIT_TIF;
+	return initialized;
+#else
+	int result = 0;
+
+	if ((flags & IMG_INIT_JPG) && !(initialized & IMG_INIT_JPG)) {
+		if (IMG_InitJPG() == 0) {
+			result |= IMG_INIT_JPG;
+		}
+	}
+	if ((flags & IMG_INIT_PNG) && !(initialized & IMG_INIT_PNG)) {
+		if (IMG_InitPNG() == 0) {
+			result |= IMG_INIT_PNG;
+		}
+	}
+	if ((flags & IMG_INIT_TIF) && !(initialized & IMG_INIT_TIF)) {
+		if (IMG_InitTIF() == 0) {
+			result |= IMG_INIT_TIF;
+		}
+	}
+	initialized |= result;
+
+	return (result);
+#endif
+}
+
+void IMG_Quit()
+{
+#if !defined(__APPLE__) || defined(SDL_IMAGE_USE_COMMON_BACKEND)
+	if (initialized & IMG_INIT_JPG) {
+		IMG_QuitJPG();
+	}
+	if (initialized & IMG_INIT_PNG) {
+		IMG_QuitPNG();
+	}
+	if (initialized & IMG_INIT_TIF) {
+		IMG_QuitTIF();
+	}
+#endif
+	initialized = 0;
+}
+
+#if !defined(__APPLE__) || defined(SDL_IMAGE_USE_COMMON_BACKEND)
 /* Load an image from a file */
 SDL_Surface *IMG_Load(const char *file)
 {
@@ -72,6 +129,7 @@ SDL_Surface *IMG_Load(const char *file)
     }
     return IMG_LoadTyped_RW(src, 1, ext);
 }
+#endif
 
 /* Load an image from an SDL datasource (for compatibility) */
 SDL_Surface *IMG_Load_RW(SDL_RWops *src, int freesrc)
