@@ -19,6 +19,7 @@
 		0072897B0F0DC2D100C302A9 /* IMG_xpm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C062012FAC847F000001 /* IMG_xpm.c */; };
 		0072897C0F0DC2D300C302A9 /* IMG_xv.c in Sources */ = {isa = PBXBuildFile; fileRef = 005DF5E70A140CA2006B0BD5 /* IMG_xv.c */; };
 		0072897D0F0DC2D400C302A9 /* IMG_xxx.c in Sources */ = {isa = PBXBuildFile; fileRef = B2D7A06503FAB42200A8000A /* IMG_xxx.c */; };
+		B0C9CF1E108DE47C00E7FA35 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0C9CF13108DE46B00E7FA35 /* SDL.framework */; };
 		BE1FA71A07AF4C44004B6283 /* SDL_image.h in Headers */ = {isa = PBXBuildFile; fileRef = 1014BAEA010A4B677F000001 /* SDL_image.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE1FA71D07AF4C44004B6283 /* IMG.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C058012FAC847F000001 /* IMG.c */; };
 		BE1FA73207AF4C45004B6283 /* IMG.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C058012FAC847F000001 /* IMG.c */; };
@@ -28,10 +29,51 @@
 		BE1FA73C07AF4C45004B6283 /* IMG_xpm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C062012FAC847F000001 /* IMG_xpm.c */; };
 		BE1FA73D07AF4C45004B6283 /* IMG_lbm.c in Sources */ = {isa = PBXBuildFile; fileRef = F5FB1F0001CD818601FAFB42 /* IMG_lbm.c */; };
 		BE1FA73E07AF4C45004B6283 /* IMG_xxx.c in Sources */ = {isa = PBXBuildFile; fileRef = B2D7A06503FAB42200A8000A /* IMG_xxx.c */; };
-		BE1FA76307AF7335004B6283 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1FA76207AF7335004B6283 /* SDL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B0C9CF12108DE46B00E7FA35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF66C0761BA81005FE872 /* SDL.framework */;
+			remoteInfo = Framework;
+		};
+		B0C9CF14108DE46B00E7FA35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF6B30761BA81005FE872 /* libSDL.a */;
+			remoteInfo = "Static Library";
+		};
+		B0C9CF16108DE46B00E7FA35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF6BA0761BA81005FE872 /* libSDLmain.a */;
+			remoteInfo = "Main Library";
+		};
+		B0C9CF18108DE46B00E7FA35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF6BE0761BA81005FE872 /* Standard DMG */;
+			remoteInfo = "Standard DMG";
+		};
+		B0C9CF1A108DE46B00E7FA35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF6C30761BA81005FE872 /* Developer Extras Package */;
+			remoteInfo = "Developer Extras Package";
+		};
+		B0C9CF1C108DE47500E7FA35 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BECDF5FE0761BA81005FE872 /* Framework */;
+			remoteInfo = Framework;
+		};
 		BE1FA74C07AF4C45004B6283 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -57,12 +99,12 @@
 		3BB4C060012FAC847F000001 /* IMG_tif.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = IMG_tif.c; path = ../IMG_tif.c; sourceTree = SOURCE_ROOT; };
 		3BB4C061012FAC847F000001 /* IMG_xcf.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = IMG_xcf.c; path = ../IMG_xcf.c; sourceTree = SOURCE_ROOT; };
 		3BB4C062012FAC847F000001 /* IMG_xpm.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = IMG_xpm.c; path = ../IMG_xpm.c; sourceTree = SOURCE_ROOT; };
+		B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../../sdl/Xcode/SDL/SDL.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B2D7A06503FAB42200A8000A /* IMG_xxx.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = IMG_xxx.c; path = ../IMG_xxx.c; sourceTree = SOURCE_ROOT; };
 		BE1FA72D07AF4C44004B6283 /* Info-Framework__Upgraded_.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Framework__Upgraded_.plist"; sourceTree = "<group>"; };
 		BE1FA72E07AF4C45004B6283 /* SDL_image.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDL_image.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1FA74107AF4C45004B6283 /* libSDL_image.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSDL_image.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1FA74507AF4C45004B6283 /* Create DMG */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Create DMG"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE1FA76207AF7335004B6283 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
 		F59C710300D5CB5801000001 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		F59C710400D5CB5801000001 /* Welcome.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Welcome.txt; sourceTree = "<group>"; };
 		F59C710600D5CB5801000001 /* SDL_image.info */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = SDL_image.info; sourceTree = "<group>"; };
@@ -74,7 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE1FA76307AF7335004B6283 /* SDL.framework in Frameworks */,
+				B0C9CF1E108DE47C00E7FA35 /* SDL.framework in Frameworks */,
 				007288A70F0DA79800C302A9 /* ApplicationServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -112,6 +154,7 @@
 		0867D691FE84028FC02AAC07 /* SDL_imageFramework */ = {
 			isa = PBXGroup;
 			children = (
+				B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */,
 				F59C70FC00D5CB5801000001 /* pkg-support */,
 				0153844A006D81B07F000001 /* Public Headers */,
 				08FB77ACFE841707C02AAC07 /* Library Source */,
@@ -151,11 +194,22 @@
 			name = "Library Source";
 			sourceTree = "<group>";
 		};
+		B0C9CF0A108DE46B00E7FA35 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B0C9CF13108DE46B00E7FA35 /* SDL.framework */,
+				B0C9CF15108DE46B00E7FA35 /* libSDL.a */,
+				B0C9CF17108DE46B00E7FA35 /* libSDLmain.a */,
+				B0C9CF19108DE46B00E7FA35 /* Standard DMG */,
+				B0C9CF1B108DE46B00E7FA35 /* Developer Extras Package */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		BE1FA76007AF72B1004B6283 /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				007288A60F0DA79800C302A9 /* ApplicationServices.framework */,
-				BE1FA76207AF7335004B6283 /* SDL.framework */,
 			);
 			name = "Linked Frameworks";
 			sourceTree = "<group>";
@@ -221,6 +275,7 @@
 			);
 			comments = "Installed into ~/Library/Frameworks/SDL_image.framework\n\nAdd -framework SDL_image to your linker flags\nAdd ~/Library/Frameworks/SDL_image.framework/Headers to your header search path\nAdd ~/Library/Frameworks to your library search path";
 			dependencies = (
+				B0C9CF1D108DE47500E7FA35 /* PBXTargetDependency */,
 			);
 			name = Framework;
 			productInstallPath = "@executable_path/../Frameworks";
@@ -275,6 +330,12 @@
 			mainGroup = 0867D691FE84028FC02AAC07 /* SDL_imageFramework */;
 			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B0C9CF0A108DE46B00E7FA35 /* Products */;
+					ProjectRef = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
+				},
+			);
 			projectRoot = ..;
 			targets = (
 				BE1FA71807AF4C44004B6283 /* Framework */,
@@ -283,6 +344,44 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B0C9CF13108DE46B00E7FA35 /* SDL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDL.framework;
+			remoteRef = B0C9CF12108DE46B00E7FA35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B0C9CF15108DE46B00E7FA35 /* libSDL.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDL.a;
+			remoteRef = B0C9CF14108DE46B00E7FA35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B0C9CF17108DE46B00E7FA35 /* libSDLmain.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSDLmain.a;
+			remoteRef = B0C9CF16108DE46B00E7FA35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B0C9CF19108DE46B00E7FA35 /* Standard DMG */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Standard DMG";
+			remoteRef = B0C9CF18108DE46B00E7FA35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B0C9CF1B108DE46B00E7FA35 /* Developer Extras Package */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = "Developer Extras Package";
+			remoteRef = B0C9CF1A108DE46B00E7FA35 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BE1FA71B07AF4C44004B6283 /* Resources */ = {
@@ -359,6 +458,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B0C9CF1D108DE47500E7FA35 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Framework;
+			targetProxy = B0C9CF1C108DE47500E7FA35 /* PBXContainerItemProxy */;
+		};
 		BE1FA74D07AF4C45004B6283 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BE1FA71807AF4C44004B6283 /* Framework */;
@@ -373,6 +477,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../Frameworks",
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
 				);
@@ -386,6 +491,7 @@
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.6.sdk;
+				SYMROOT = "$(PROJECT_DIR)/../../Frameworks";
 			};
 			name = Development_ImageIO;
 		};
@@ -409,9 +515,9 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../Frameworks/Release/SDL.framework/Headers",
 					/Library/Frameworks/SDL.framework/Headers,
 					"~/Library/Frameworks/SDL.framework/Headers",
-					graphics/include,
 				);
 				INFOPLIST_FILE = "Info-Framework__Upgraded_.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
@@ -485,12 +591,13 @@
 			};
 			name = Development_ImageIO;
 		};
-		007288150F0DA5C400C302A9 /* Deployment_ImageIO */ = {
+		007288150F0DA5C400C302A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../Frameworks",
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
 				);
@@ -504,10 +611,11 @@
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.6.sdk;
+				SYMROOT = "$(PROJECT_DIR)/../../Frameworks";
 			};
-			name = Deployment_ImageIO;
+			name = Release;
 		};
-		007288160F0DA5C400C302A9 /* Deployment_ImageIO */ = {
+		007288160F0DA5C400C302A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -525,6 +633,7 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../Frameworks/Release/SDL.framework/Headers",
 					/Library/Frameworks/SDL.framework/Headers,
 					"~/Library/Frameworks/SDL.framework/Headers",
 				);
@@ -539,9 +648,9 @@
 				);
 				WRAPPER_EXTENSION = framework;
 			};
-			name = Deployment_ImageIO;
+			name = Release;
 		};
-		007288170F0DA5C400C302A9 /* Deployment_ImageIO */ = {
+		007288170F0DA5C400C302A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -574,9 +683,9 @@
 					"-Wno-unknown-pragmas",
 				);
 			};
-			name = Deployment_ImageIO;
+			name = Release;
 		};
-		007288180F0DA5C400C302A9 /* Deployment_ImageIO */ = {
+		007288180F0DA5C400C302A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -593,7 +702,7 @@
 				);
 				ZERO_LINK = NO;
 			};
-			name = Deployment_ImageIO;
+			name = Release;
 		};
 		00B7E3AB097EB73D00826121 /* Development_legacy */ = {
 			isa = XCBuildConfiguration;
@@ -621,14 +730,13 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../Frameworks/Release/SDL.framework/Headers",
 					/Library/Frameworks/SDL.framework/Headers,
 					"~/Library/Frameworks/SDL.framework/Headers",
-					"$(HEADER_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
 				);
 				HEADER_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"graphics/lib\"";
 				INFOPLIST_FILE = "Info-Framework__Upgraded_.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"graphics/lib\"";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-seg1addr",
@@ -671,13 +779,12 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../Frameworks/Release/SDL.framework/Headers",
 					/Library/Frameworks/SDL.framework/Headers,
 					"~/Library/Frameworks/SDL.framework/Headers",
-					graphics/include,
 				);
 				INFOPLIST_FILE = "Info-Framework__Upgraded_.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"graphics/lib\"";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-seg1addr",
@@ -713,13 +820,12 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				HEADER_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../Frameworks/Release/SDL.framework/Headers",
 					/Library/Frameworks/SDL.framework/Headers,
 					"~/Library/Frameworks/SDL.framework/Headers",
-					graphics/include,
 				);
 				INFOPLIST_FILE = "Info-Framework__Upgraded_.plist";
 				INSTALL_PATH = "@executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"graphics/lib\"";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = (
 					"-seg1addr",
@@ -934,6 +1040,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../Frameworks",
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
 				);
@@ -947,6 +1054,7 @@
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.6.sdk;
+				SYMROOT = "$(PROJECT_DIR)/../../Frameworks";
 			};
 			name = Development_legacy;
 		};
@@ -956,6 +1064,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../Frameworks",
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
 				);
@@ -969,6 +1078,7 @@
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.6.sdk;
+				SYMROOT = "$(PROJECT_DIR)/../../Frameworks";
 			};
 			name = Deployment_legacy;
 		};
@@ -978,6 +1088,7 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(PROJECT_DIR)/../../Frameworks",
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
 				);
@@ -991,6 +1102,7 @@
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.6.sdk;
+				SYMROOT = "$(PROJECT_DIR)/../../Frameworks";
 			};
 			name = Default;
 		};
@@ -1000,7 +1112,7 @@
 		00B7E3AA097EB73D00826121 /* Build configuration list for PBXNativeTarget "Framework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				007288160F0DA5C400C302A9 /* Deployment_ImageIO */,
+				007288160F0DA5C400C302A9 /* Release */,
 				007288120F0DA5BA00C302A9 /* Development_ImageIO */,
 				00B7E3AB097EB73D00826121 /* Development_legacy */,
 				00B7E3AC097EB73D00826121 /* Deployment_legacy */,
@@ -1012,7 +1124,7 @@
 		00B7E3AE097EB73D00826121 /* Build configuration list for PBXNativeTarget "Static Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				007288170F0DA5C400C302A9 /* Deployment_ImageIO */,
+				007288170F0DA5C400C302A9 /* Release */,
 				007288130F0DA5BA00C302A9 /* Development_ImageIO */,
 				00B7E3AF097EB73D00826121 /* Development_legacy */,
 				00B7E3B0097EB73D00826121 /* Deployment_legacy */,
@@ -1024,7 +1136,7 @@
 		00B7E3B2097EB73D00826121 /* Build configuration list for PBXNativeTarget "Create DMG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				007288180F0DA5C400C302A9 /* Deployment_ImageIO */,
+				007288180F0DA5C400C302A9 /* Release */,
 				007288140F0DA5BA00C302A9 /* Development_ImageIO */,
 				00B7E3B3097EB73D00826121 /* Development_legacy */,
 				00B7E3B4097EB73D00826121 /* Deployment_legacy */,
@@ -1036,7 +1148,7 @@
 		00B7E3B6097EB73D00826121 /* Build configuration list for PBXProject "SDL_image" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				007288150F0DA5C400C302A9 /* Deployment_ImageIO */,
+				007288150F0DA5C400C302A9 /* Release */,
 				007288110F0DA5BA00C302A9 /* Development_ImageIO */,
 				00B7E3B7097EB73D00826121 /* Development_legacy */,
 				00B7E3B8097EB73D00826121 /* Deployment_legacy */,
