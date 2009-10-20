@@ -1,6 +1,6 @@
 /*
     SDL_image:  An example image loading library for use with SDL
-    Copyright (C) 1997-2006 Sam Lantinga
+    Copyright (C) 1997-2009 Sam Lantinga
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -32,7 +32,7 @@
  *
  * The result is an 8bpp indexed surface if possible, otherwise 32bpp.
  * The colourkey is correctly set if transparency is used.
- * 
+ *
  * Besides the standard API, also provides
  *
  *     SDL_Surface *IMG_ReadXPMFromArray(char **xpm)
@@ -328,7 +328,7 @@ static SDL_Surface *load_xpm(char **xpm, SDL_RWops *src)
 	linebuf = NULL;
 	buflen = 0;
 
-	if ( src ) 
+	if ( src )
 		start = SDL_RWtell(src);
 
 	if(xpm)

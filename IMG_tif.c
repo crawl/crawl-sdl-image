@@ -1,6 +1,6 @@
 /*
     SDL_image:  An example image loading library for use with SDL
-    Copyright (C) 1997-2006 Sam Lantinga
+    Copyright (C) 1997-2009 Sam Lantinga
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -216,12 +216,12 @@ SDL_Surface* IMG_LoadTIF_RW(SDL_RWops* src)
 	}
 	start = SDL_RWtell(src);
 
-	if ( IMG_InitTIF() < 0 ) {
+	if ( IMG_Init(IMG_INIT_TIF) < 0 ) {
 		return NULL;
 	}
 
 	/* turn off memory mapped access with the m flag */
-	tiff = lib.TIFFClientOpen("SDL_image", "rm", (thandle_t)src, 
+	tiff = lib.TIFFClientOpen("SDL_image", "rm", (thandle_t)src,
 		tiff_read, tiff_write, tiff_seek, tiff_close, tiff_size, tiff_map, tiff_unmap);
 	if(!tiff)
 		goto error;
@@ -238,7 +238,7 @@ SDL_Surface* IMG_LoadTIF_RW(SDL_RWops* src)
 		Rmask, Gmask, Bmask, Amask);
 	if(!surface)
 		goto error;
-	
+
 	if(!lib.TIFFReadRGBAImage(tiff, img_width, img_height, surface->pixels, 0))
 		goto error;
 
@@ -257,8 +257,7 @@ SDL_Surface* IMG_LoadTIF_RW(SDL_RWops* src)
 		}
 	}
 	lib.TIFFClose(tiff);
-	IMG_QuitTIF();
-	
+
 	return surface;
 
 error:
@@ -266,11 +265,20 @@ error:
 	if ( surface ) {
 		SDL_FreeSurface(surface);
 	}
-	IMG_QuitTIF();
 	return NULL;
 }
 
 #else
+
+int IMG_InitTIF()
+{
+	IMG_SetError("TIFF images are not supported");
+	return(-1);
+}
+
+void IMG_QuitTIF()
+{
+}
 
 /* See if an image is contained in a data source */
 int IMG_isTIF(SDL_RWops *src)

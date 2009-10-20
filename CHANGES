@@ -1,3 +1,14 @@
+1.2.8:
+Sam Lantinga - Sun Oct  4 13:12:54 PDT 2009
+ * Added support for uncompressed PCX files
+Mason Wheeler - 2009-06-10 06:29:45 PDT 
+ * Added IMG_Init()/IMG_Quit() to prevent constantly loading and unloading DLLs
+Couriersud - Mon, 12 Jan 2009 17:21:13 -0800
+ * Added support for ICO and CUR image files
+Eric Wing - Fri, 2 Jan 2009 02:01:16 -0800
+ * Added ImageIO loading infrastructure for Mac OS X
+ * Added UIImage loading infrastructure for iPhone / iPod Touch
+
 1.2.7:
 Sam Lantinga - Sun Nov  2 15:08:27 PST 2008
  * Fixed buffer overflow in BMP loading code, discovered by j00ru//vx

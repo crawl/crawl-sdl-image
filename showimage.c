@@ -1,6 +1,6 @@
 /*
     showimage:  A test application for the SDL image loading library.
-    Copyright (C) 1997-2006 Sam Lantinga
+    Copyright (C) 1997-2009 Sam Lantinga
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -35,7 +35,7 @@
 #endif
 
 /* Draw a Gimpish background pattern to show transparency in the image */
-void draw_background(SDL_Surface *screen)
+static void draw_background(SDL_Surface *screen)
 {
     Uint8 *dst = screen->pixels;
     int x, y;
@@ -80,6 +80,9 @@ int main(int argc, char *argv[])
 	SDL_Surface *screen, *image;
 	int i, depth, done;
 	SDL_Event event;
+#if 0
+	SDL_RWops* rw_ops;
+#endif
 
 	/* Check command line usage */
 	if ( ! argv[1] ) {
@@ -100,6 +103,18 @@ int main(int argc, char *argv[])
 			flags |= SDL_FULLSCREEN;
 			continue;
 		}
+#if 0
+		rw_ops = SDL_RWFromFile(argv[1], "r");
+
+		fprintf(stderr, "BMP:\t%d\n", IMG_isBMP(rw_ops));
+		fprintf(stderr, "GIF:\t%d\n", IMG_isGIF(rw_ops));
+		fprintf(stderr, "JPG:\t%d\n", IMG_isJPG(rw_ops));
+		fprintf(stderr, "PNG:\t%d\n", IMG_isPNG(rw_ops));
+		fprintf(stderr, "TIF:\t%d\n", IMG_isTIF(rw_ops));
+		/* fprintf(stderr, "TGA:\t%d\n", IMG_isTGA(rw_ops)); */
+		fprintf(stderr, "PCX:\t%d\n", IMG_isPCX(rw_ops));
+#endif
+
 		/* Open the image file */
 #ifdef XPM_INCLUDED
 		image = IMG_ReadXPMFromArray(picture_xpm);

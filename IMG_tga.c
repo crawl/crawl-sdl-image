@@ -1,6 +1,6 @@
 /*
     SDL_image:  An example image loading library for use with SDL
-    Copyright (C) 1997-2006 Sam Lantinga
+    Copyright (C) 1997-2009 Sam Lantinga
 
     This library is free software; you can redistribute it and/or
     modify it under the terms of the GNU Lesser General Public
@@ -188,7 +188,7 @@ SDL_Surface *IMG_LoadTGA_RW(SDL_RWops *src)
        || hdr.flags & TGA_ORIGIN_RIGHT) {
         goto unsupported;
     }
-    
+
     SDL_RWseek(src, hdr.infolen, SEEK_CUR); /* skip info field */
 
     w = LE16(hdr.width);
