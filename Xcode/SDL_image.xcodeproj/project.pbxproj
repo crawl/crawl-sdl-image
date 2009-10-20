@@ -3,92 +3,35 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 44;
+	objectVersion = 42;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		005DF5E80A140CA2006B0BD5 /* IMG_xv.c in Sources */ = {isa = PBXBuildFile; fileRef = 005DF5E70A140CA2006B0BD5 /* IMG_xv.c */; };
 		005DF5E90A140CA2006B0BD5 /* IMG_xv.c in Sources */ = {isa = PBXBuildFile; fileRef = 005DF5E70A140CA2006B0BD5 /* IMG_xv.c */; };
-		B0F7DF721086F0B7008FFA70 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0F7DF371086EFD2008FFA70 /* SDL.framework */; };
+		007287E40F0D997300C302A9 /* IMG_ImageIO.c in Sources */ = {isa = PBXBuildFile; fileRef = 007287E30F0D997300C302A9 /* IMG_ImageIO.c */; };
+		007287E50F0D997300C302A9 /* IMG_ImageIO.c in Sources */ = {isa = PBXBuildFile; fileRef = 007287E30F0D997300C302A9 /* IMG_ImageIO.c */; };
+		007288A70F0DA79800C302A9 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007288A60F0DA79800C302A9 /* ApplicationServices.framework */; };
+		007288A80F0DA79800C302A9 /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007288A60F0DA79800C302A9 /* ApplicationServices.framework */; };
+		007289690F0DC29B00C302A9 /* IMG_lbm.c in Sources */ = {isa = PBXBuildFile; fileRef = F5FB1F0001CD818601FAFB42 /* IMG_lbm.c */; };
+		0072896A0F0DC29F00C302A9 /* IMG_pcx.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05C012FAC847F000001 /* IMG_pcx.c */; };
+		007289720F0DC2BD00C302A9 /* IMG_pnm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05E012FAC847F000001 /* IMG_pnm.c */; };
+		0072897A0F0DC2D000C302A9 /* IMG_xcf.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C061012FAC847F000001 /* IMG_xcf.c */; };
+		0072897B0F0DC2D100C302A9 /* IMG_xpm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C062012FAC847F000001 /* IMG_xpm.c */; };
+		0072897C0F0DC2D300C302A9 /* IMG_xv.c in Sources */ = {isa = PBXBuildFile; fileRef = 005DF5E70A140CA2006B0BD5 /* IMG_xv.c */; };
+		0072897D0F0DC2D400C302A9 /* IMG_xxx.c in Sources */ = {isa = PBXBuildFile; fileRef = B2D7A06503FAB42200A8000A /* IMG_xxx.c */; };
 		BE1FA71A07AF4C44004B6283 /* SDL_image.h in Headers */ = {isa = PBXBuildFile; fileRef = 1014BAEA010A4B677F000001 /* SDL_image.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE1FA71D07AF4C44004B6283 /* IMG.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C058012FAC847F000001 /* IMG.c */; };
-		BE1FA71E07AF4C44004B6283 /* IMG_bmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C059012FAC847F000001 /* IMG_bmp.c */; };
-		BE1FA71F07AF4C44004B6283 /* IMG_gif.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05A012FAC847F000001 /* IMG_gif.c */; };
-		BE1FA72007AF4C44004B6283 /* IMG_jpg.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05B012FAC847F000001 /* IMG_jpg.c */; };
-		BE1FA72107AF4C44004B6283 /* IMG_pcx.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05C012FAC847F000001 /* IMG_pcx.c */; };
-		BE1FA72207AF4C44004B6283 /* IMG_png.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05D012FAC847F000001 /* IMG_png.c */; };
-		BE1FA72307AF4C44004B6283 /* IMG_pnm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05E012FAC847F000001 /* IMG_pnm.c */; };
-		BE1FA72407AF4C44004B6283 /* IMG_tga.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05F012FAC847F000001 /* IMG_tga.c */; };
-		BE1FA72507AF4C44004B6283 /* IMG_xcf.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C061012FAC847F000001 /* IMG_xcf.c */; };
-		BE1FA72607AF4C44004B6283 /* IMG_xpm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C062012FAC847F000001 /* IMG_xpm.c */; };
-		BE1FA72707AF4C44004B6283 /* IMG_lbm.c in Sources */ = {isa = PBXBuildFile; fileRef = F5FB1F0001CD818601FAFB42 /* IMG_lbm.c */; };
-		BE1FA72807AF4C44004B6283 /* IMG_xxx.c in Sources */ = {isa = PBXBuildFile; fileRef = B2D7A06503FAB42200A8000A /* IMG_xxx.c */; };
-		BE1FA72907AF4C44004B6283 /* IMG_tif.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C060012FAC847F000001 /* IMG_tif.c */; };
 		BE1FA73207AF4C45004B6283 /* IMG.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C058012FAC847F000001 /* IMG.c */; };
-		BE1FA73307AF4C45004B6283 /* IMG_bmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C059012FAC847F000001 /* IMG_bmp.c */; };
-		BE1FA73407AF4C45004B6283 /* IMG_gif.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05A012FAC847F000001 /* IMG_gif.c */; };
-		BE1FA73507AF4C45004B6283 /* IMG_jpg.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05B012FAC847F000001 /* IMG_jpg.c */; };
 		BE1FA73607AF4C45004B6283 /* IMG_pcx.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05C012FAC847F000001 /* IMG_pcx.c */; };
-		BE1FA73707AF4C45004B6283 /* IMG_png.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05D012FAC847F000001 /* IMG_png.c */; };
 		BE1FA73807AF4C45004B6283 /* IMG_pnm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05E012FAC847F000001 /* IMG_pnm.c */; };
-		BE1FA73907AF4C45004B6283 /* IMG_tga.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C05F012FAC847F000001 /* IMG_tga.c */; };
-		BE1FA73A07AF4C45004B6283 /* IMG_tif.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C060012FAC847F000001 /* IMG_tif.c */; };
 		BE1FA73B07AF4C45004B6283 /* IMG_xcf.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C061012FAC847F000001 /* IMG_xcf.c */; };
 		BE1FA73C07AF4C45004B6283 /* IMG_xpm.c in Sources */ = {isa = PBXBuildFile; fileRef = 3BB4C062012FAC847F000001 /* IMG_xpm.c */; };
 		BE1FA73D07AF4C45004B6283 /* IMG_lbm.c in Sources */ = {isa = PBXBuildFile; fileRef = F5FB1F0001CD818601FAFB42 /* IMG_lbm.c */; };
 		BE1FA73E07AF4C45004B6283 /* IMG_xxx.c in Sources */ = {isa = PBXBuildFile; fileRef = B2D7A06503FAB42200A8000A /* IMG_xxx.c */; };
+		BE1FA76307AF7335004B6283 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1FA76207AF7335004B6283 /* SDL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		B0F7DF361086EFD2008FFA70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0F7DF2C1086EFD2008FFA70 /* SDL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BECDF66C0761BA81005FE872;
-			remoteInfo = Framework;
-		};
-		B0F7DF381086EFD2008FFA70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0F7DF2C1086EFD2008FFA70 /* SDL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BECDF6B30761BA81005FE872;
-			remoteInfo = "Static Library";
-		};
-		B0F7DF3A1086EFD2008FFA70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0F7DF2C1086EFD2008FFA70 /* SDL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BECDF6BA0761BA81005FE872;
-			remoteInfo = "Main Library";
-		};
-		B0F7DF3C1086EFD2008FFA70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0F7DF2C1086EFD2008FFA70 /* SDL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BECDF6BE0761BA81005FE872;
-			remoteInfo = "Standard DMG";
-		};
-		B0F7DF3E1086EFD2008FFA70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0F7DF2C1086EFD2008FFA70 /* SDL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BECDF6C30761BA81005FE872;
-			remoteInfo = "Developer Extras Package";
-		};
-		B0F7DF401086EFD2008FFA70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0F7DF2C1086EFD2008FFA70 /* SDL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 0014B9A809C0E585003A99D5;
-			remoteInfo = "Framework Without X11 Stuff (for those who didn't install the X11 headers with Xcode)";
-		};
-		B0F7DF421086EFD2008FFA70 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B0F7DF2C1086EFD2008FFA70 /* SDL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 002F327609CA02D800EBEB88;
-			remoteInfo = "Static Library Without X11 Stuff (for those who didn't install the X11 headers with Xcode)";
-		};
 		BE1FA74C07AF4C45004B6283 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -100,6 +43,8 @@
 
 /* Begin PBXFileReference section */
 		005DF5E70A140CA2006B0BD5 /* IMG_xv.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = IMG_xv.c; path = ../IMG_xv.c; sourceTree = SOURCE_ROOT; };
+		007287E30F0D997300C302A9 /* IMG_ImageIO.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = IMG_ImageIO.c; path = ../IMG_ImageIO.c; sourceTree = "<group>"; };
+		007288A60F0DA79800C302A9 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
 		1014BAEA010A4B677F000001 /* SDL_image.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = SDL_image.h; path = ../SDL_image.h; sourceTree = SOURCE_ROOT; };
 		3BB4C058012FAC847F000001 /* IMG.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = IMG.c; path = ../IMG.c; sourceTree = SOURCE_ROOT; };
 		3BB4C059012FAC847F000001 /* IMG_bmp.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = IMG_bmp.c; path = ../IMG_bmp.c; sourceTree = SOURCE_ROOT; };
@@ -112,12 +57,12 @@
 		3BB4C060012FAC847F000001 /* IMG_tif.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = IMG_tif.c; path = ../IMG_tif.c; sourceTree = SOURCE_ROOT; };
 		3BB4C061012FAC847F000001 /* IMG_xcf.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = IMG_xcf.c; path = ../IMG_xcf.c; sourceTree = SOURCE_ROOT; };
 		3BB4C062012FAC847F000001 /* IMG_xpm.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = IMG_xpm.c; path = ../IMG_xpm.c; sourceTree = SOURCE_ROOT; };
-		B0F7DF2C1086EFD2008FFA70 /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../../sdl/Xcode/SDL/SDL.xcodeproj; sourceTree = SOURCE_ROOT; };
 		B2D7A06503FAB42200A8000A /* IMG_xxx.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; name = IMG_xxx.c; path = ../IMG_xxx.c; sourceTree = SOURCE_ROOT; };
 		BE1FA72D07AF4C44004B6283 /* Info-Framework__Upgraded_.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Framework__Upgraded_.plist"; sourceTree = "<group>"; };
 		BE1FA72E07AF4C45004B6283 /* SDL_image.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SDL_image.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1FA74107AF4C45004B6283 /* libSDL_image.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSDL_image.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE1FA74507AF4C45004B6283 /* Create DMG */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Create DMG"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE1FA76207AF7335004B6283 /* SDL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL.framework; path = /Library/Frameworks/SDL.framework; sourceTree = "<absolute>"; };
 		F59C710300D5CB5801000001 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = ReadMe.txt; sourceTree = "<group>"; };
 		F59C710400D5CB5801000001 /* Welcome.txt */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = Welcome.txt; sourceTree = "<group>"; };
 		F59C710600D5CB5801000001 /* SDL_image.info */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = SDL_image.info; sourceTree = "<group>"; };
@@ -129,7 +74,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0F7DF721086F0B7008FFA70 /* SDL.framework in Frameworks */,
+				BE1FA76307AF7335004B6283 /* SDL.framework in Frameworks */,
+				007288A70F0DA79800C302A9 /* ApplicationServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007288A80F0DA79800C302A9 /* ApplicationServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,10 +112,10 @@
 		0867D691FE84028FC02AAC07 /* SDL_imageFramework */ = {
 			isa = PBXGroup;
 			children = (
-				B0F7DF2C1086EFD2008FFA70 /* SDL.xcodeproj */,
 				F59C70FC00D5CB5801000001 /* pkg-support */,
 				0153844A006D81B07F000001 /* Public Headers */,
 				08FB77ACFE841707C02AAC07 /* Library Source */,
+				BE1FA76107AF72F5004B6283 /* Frameworks */,
 				034768DDFF38A45A11DB9C8B /* Products */,
 				BE1FA72D07AF4C44004B6283 /* Info-Framework__Upgraded_.plist */,
 			);
@@ -199,22 +146,26 @@
 				3BB4C062012FAC847F000001 /* IMG_xpm.c */,
 				005DF5E70A140CA2006B0BD5 /* IMG_xv.c */,
 				B2D7A06503FAB42200A8000A /* IMG_xxx.c */,
+				007287E30F0D997300C302A9 /* IMG_ImageIO.c */,
 			);
 			name = "Library Source";
 			sourceTree = "<group>";
 		};
-		B0F7DF2D1086EFD2008FFA70 /* Products */ = {
+		BE1FA76007AF72B1004B6283 /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B0F7DF371086EFD2008FFA70 /* SDL.framework */,
-				B0F7DF391086EFD2008FFA70 /* libSDL.a */,
-				B0F7DF3B1086EFD2008FFA70 /* libSDLmain.a */,
-				B0F7DF3D1086EFD2008FFA70 /* Standard DMG */,
-				B0F7DF3F1086EFD2008FFA70 /* Developer Extras Package */,
-				B0F7DF411086EFD2008FFA70 /* SDL.framework */,
-				B0F7DF431086EFD2008FFA70 /* libSDL.a */,
+				007288A60F0DA79800C302A9 /* ApplicationServices.framework */,
+				BE1FA76207AF7335004B6283 /* SDL.framework */,
 			);
-			name = Products;
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		BE1FA76107AF72F5004B6283 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BE1FA76007AF72B1004B6283 /* Linked Frameworks */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F59C70FC00D5CB5801000001 /* pkg-support */ = {
@@ -319,18 +270,12 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			buildConfigurationList = 00B7E3B6097EB73D00826121 /* Build configuration list for PBXProject "SDL_image" */;
-			compatibilityVersion = "Xcode 3.0";
+			compatibilityVersion = "Xcode 2.4";
 			hasScannedForEncodings = 1;
 			mainGroup = 0867D691FE84028FC02AAC07 /* SDL_imageFramework */;
 			productRefGroup = 034768DDFF38A45A11DB9C8B /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = B0F7DF2D1086EFD2008FFA70 /* Products */;
-					ProjectRef = B0F7DF2C1086EFD2008FFA70 /* SDL.xcodeproj */;
-				},
-			);
-			projectRoot = "";
+			projectRoot = ..;
 			targets = (
 				BE1FA71807AF4C44004B6283 /* Framework */,
 				BE1FA72F07AF4C45004B6283 /* Static Library */,
@@ -338,58 +283,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		B0F7DF371086EFD2008FFA70 /* SDL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SDL.framework;
-			remoteRef = B0F7DF361086EFD2008FFA70 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B0F7DF391086EFD2008FFA70 /* libSDL.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSDL.a;
-			remoteRef = B0F7DF381086EFD2008FFA70 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B0F7DF3B1086EFD2008FFA70 /* libSDLmain.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSDLmain.a;
-			remoteRef = B0F7DF3A1086EFD2008FFA70 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B0F7DF3D1086EFD2008FFA70 /* Standard DMG */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "Standard DMG";
-			remoteRef = B0F7DF3C1086EFD2008FFA70 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B0F7DF3F1086EFD2008FFA70 /* Developer Extras Package */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = "Developer Extras Package";
-			remoteRef = B0F7DF3E1086EFD2008FFA70 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B0F7DF411086EFD2008FFA70 /* SDL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SDL.framework;
-			remoteRef = B0F7DF401086EFD2008FFA70 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		B0F7DF431086EFD2008FFA70 /* libSDL.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libSDL.a;
-			remoteRef = B0F7DF421086EFD2008FFA70 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		BE1FA71B07AF4C44004B6283 /* Resources */ = {
@@ -436,19 +329,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE1FA71D07AF4C44004B6283 /* IMG.c in Sources */,
-				BE1FA71E07AF4C44004B6283 /* IMG_bmp.c in Sources */,
-				BE1FA71F07AF4C44004B6283 /* IMG_gif.c in Sources */,
-				BE1FA72007AF4C44004B6283 /* IMG_jpg.c in Sources */,
-				BE1FA72107AF4C44004B6283 /* IMG_pcx.c in Sources */,
-				BE1FA72207AF4C44004B6283 /* IMG_png.c in Sources */,
-				BE1FA72307AF4C44004B6283 /* IMG_pnm.c in Sources */,
-				BE1FA72407AF4C44004B6283 /* IMG_tga.c in Sources */,
-				BE1FA72507AF4C44004B6283 /* IMG_xcf.c in Sources */,
-				BE1FA72607AF4C44004B6283 /* IMG_xpm.c in Sources */,
-				BE1FA72707AF4C44004B6283 /* IMG_lbm.c in Sources */,
-				BE1FA72807AF4C44004B6283 /* IMG_xxx.c in Sources */,
-				BE1FA72907AF4C44004B6283 /* IMG_tif.c in Sources */,
-				005DF5E80A140CA2006B0BD5 /* IMG_xv.c in Sources */,
+				007287E40F0D997300C302A9 /* IMG_ImageIO.c in Sources */,
+				007289690F0DC29B00C302A9 /* IMG_lbm.c in Sources */,
+				0072896A0F0DC29F00C302A9 /* IMG_pcx.c in Sources */,
+				007289720F0DC2BD00C302A9 /* IMG_pnm.c in Sources */,
+				0072897A0F0DC2D000C302A9 /* IMG_xcf.c in Sources */,
+				0072897B0F0DC2D100C302A9 /* IMG_xpm.c in Sources */,
+				0072897C0F0DC2D300C302A9 /* IMG_xv.c in Sources */,
+				0072897D0F0DC2D400C302A9 /* IMG_xxx.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,19 +345,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE1FA73207AF4C45004B6283 /* IMG.c in Sources */,
-				BE1FA73307AF4C45004B6283 /* IMG_bmp.c in Sources */,
-				BE1FA73407AF4C45004B6283 /* IMG_gif.c in Sources */,
-				BE1FA73507AF4C45004B6283 /* IMG_jpg.c in Sources */,
 				BE1FA73607AF4C45004B6283 /* IMG_pcx.c in Sources */,
-				BE1FA73707AF4C45004B6283 /* IMG_png.c in Sources */,
 				BE1FA73807AF4C45004B6283 /* IMG_pnm.c in Sources */,
-				BE1FA73907AF4C45004B6283 /* IMG_tga.c in Sources */,
-				BE1FA73A07AF4C45004B6283 /* IMG_tif.c in Sources */,
 				BE1FA73B07AF4C45004B6283 /* IMG_xcf.c in Sources */,
 				BE1FA73C07AF4C45004B6283 /* IMG_xpm.c in Sources */,
 				BE1FA73D07AF4C45004B6283 /* IMG_lbm.c in Sources */,
 				BE1FA73E07AF4C45004B6283 /* IMG_xxx.c in Sources */,
 				005DF5E90A140CA2006B0BD5 /* IMG_xv.c in Sources */,
+				007287E50F0D997300C302A9 /* IMG_ImageIO.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,255 +367,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		00B7E3AB097EB73D00826121 /* Debug */ = {
+		007288110F0DA5BA00C302A9 /* Development_ImageIO */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				EXPORTED_SYMBOLS_FILE = exports/SDL_image.x;
-				FRAMEWORK_VERSION = A;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					LOAD_BMP,
-					LOAD_GIF,
-					LOAD_JPG,
-					LOAD_LBM,
-					LOAD_PCX,
-					LOAD_PNG,
-					LOAD_PNM,
-					LOAD_TGA,
-					LOAD_XCF,
-					LOAD_XPM,
-					LOAD_XXX,
-					LOAD_TIF_DISABLE,
-				);
-				GCC_USE_GCC3_PFE_SUPPORT = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../../sdl/Xcode/SDL/build/Deployment/SDL.framework/Headers",
-					graphics/include,
-				);
-				INFOPLIST_FILE = "Info-Framework__Upgraded_.plist";
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"graphics/lib\"";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-seg1addr",
-					0x31000000,
-					"-ljpeg",
-					"-lpng",
-					"-lz",
-				);
-				PRODUCT_NAME = SDL_image;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Wno-four-char-constants",
-				);
-				WRAPPER_EXTENSION = framework;
-				ZERO_LINK = YES;
-			};
-			name = Debug;
-		};
-		00B7E3AC097EB73D00826121 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				EXPORTED_SYMBOLS_FILE = exports/SDL_image.x;
-				FRAMEWORK_VERSION = A;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					LOAD_BMP,
-					LOAD_GIF,
-					LOAD_JPG,
-					LOAD_LBM,
-					LOAD_PCX,
-					LOAD_PNG,
-					LOAD_PNM,
-					LOAD_TGA,
-					LOAD_XCF,
-					LOAD_XPM,
-					LOAD_XXX,
-					LOAD_TIF_DISABLE,
-				);
-				GCC_USE_GCC3_PFE_SUPPORT = NO;
-				HEADER_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../../sdl/Xcode/SDL/build/Release/SDL.framework/Headers",
-					"$(PROJECT_DIR)/../../sdl/Xcode/SDL/build/Debug/SDL.framework/Headers",
-					graphics/include,
-				);
-				INFOPLIST_FILE = "Info-Framework__Upgraded_.plist";
-				INSTALL_PATH = "@executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = "\"graphics/lib\"";
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-seg1addr",
-					0x31000000,
-					"-ljpeg",
-					"-lpng",
-					"-lz",
-				);
-				PRODUCT_NAME = SDL_image;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wall",
-					"-Wno-four-char-constants",
-				);
-				WRAPPER_EXTENSION = framework;
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		00B7E3AF097EB73D00826121 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					LOAD_BMP,
-					LOAD_GIF,
-					LOAD_JPG,
-					LOAD_LBM,
-					LOAD_PCX,
-					LOAD_PNG,
-					LOAD_PNM,
-					LOAD_TGA,
-					LOAD_XCF,
-					LOAD_XPM,
-					LOAD_XXX,
-					LOAD_TIF_DISABLE,
-				);
-				HEADER_SEARCH_PATHS = (
-					/Library/Frameworks/SDL.framework/Headers,
-					"~/Library/Frameworks/SDL.framework/Headers",
-					graphics/include,
-				);
-				LIBRARY_SEARCH_PATHS = graphics/lib;
-				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-ljpeg",
-					"-lpng",
-				);
-				OTHER_LIBTOOL_FLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = SDL_image;
-				REZ_EXECUTABLE = YES;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				ZERO_LINK = YES;
-			};
-			name = Debug;
-		};
-		00B7E3B0097EB73D00826121 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = "";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					LOAD_BMP,
-					LOAD_GIF,
-					LOAD_JPG,
-					LOAD_LBM,
-					LOAD_PCX,
-					LOAD_PNG,
-					LOAD_PNM,
-					LOAD_TGA,
-					LOAD_XCF,
-					LOAD_XPM,
-					LOAD_XXX,
-					LOAD_TIF_DISABLE,
-				);
-				HEADER_SEARCH_PATHS = (
-					/Library/Frameworks/SDL.framework/Headers,
-					"~/Library/Frameworks/SDL.framework/Headers",
-					graphics/include,
-				);
-				LIBRARY_SEARCH_PATHS = graphics/lib;
-				LIBRARY_STYLE = STATIC;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = (
-					"-ljpeg",
-					"-lpng",
-				);
-				OTHER_LIBTOOL_FLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = SDL_image;
-				REZ_EXECUTABLE = YES;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		00B7E3B3097EB73D00826121 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "Create DMG";
-				REZ_EXECUTABLE = YES;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				ZERO_LINK = YES;
-			};
-			name = Debug;
-		};
-		00B7E3B4097EB73D00826121 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				OTHER_CFLAGS = "";
-				OTHER_LDFLAGS = "";
-				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = "Create DMG";
-				REZ_EXECUTABLE = YES;
-				SECTORDER_FLAGS = "";
-				WARNING_CFLAGS = (
-					"-Wmost",
-					"-Wno-four-char-constants",
-					"-Wno-unknown-pragmas",
-				);
-				ZERO_LINK = NO;
-			};
-			name = Release;
-		};
-		00B7E3B7097EB73D00826121 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
-				);
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
@@ -743,24 +382,117 @@
 				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.6;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.6.sdk;
-				SYMROOT = "$(PROJECT_DIR)/../../Frameworks";
 			};
-			name = Debug;
+			name = Development_ImageIO;
 		};
-		00B7E3B8097EB73D00826121 /* Release */ = {
+		007288120F0DA5BA00C302A9 /* Development_ImageIO */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					ppc,
-					i386,
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LOAD_LBM,
+					LOAD_PCX,
+					LOAD_PNM,
+					LOAD_XCF,
+					LOAD_XPM,
+					LOAD_XXX,
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL.framework/Headers,
+					"~/Library/Frameworks/SDL.framework/Headers",
+					graphics/include,
+				);
+				INFOPLIST_FILE = "Info-Framework__Upgraded_.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				OTHER_CFLAGS = "";
+				PRODUCT_NAME = SDL_image;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wno-four-char-constants",
+				);
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Development_ImageIO;
+		};
+		007288130F0DA5BA00C302A9 /* Development_ImageIO */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LOAD_LBM,
+					LOAD_PCX,
+					LOAD_PNM,
+					LOAD_XCF,
+					LOAD_XPM,
+					LOAD_XXX,
+				);
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL.framework/Headers,
+					"~/Library/Frameworks/SDL.framework/Headers",
+				);
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "";
+				OTHER_LIBTOOL_FLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL_image;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Development_ImageIO;
+		};
+		007288140F0DA5BA00C302A9 /* Development_ImageIO */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Create DMG";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = YES;
+			};
+			name = Development_ImageIO;
+		};
+		007288150F0DA5C400C302A9 /* Deployment_ImageIO */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../../sdl/Xcode/SDL/build/Release",
-					"$(PROJECT_DIR)/../../sdl/Xcode/SDL/build/Debug",
+					"$(HOME)/Library/Frameworks",
+					/Library/Frameworks,
 				);
 				GCC_VERSION_i386 = 4.0;
 				GCC_VERSION_ppc = 4.0;
@@ -768,13 +500,499 @@
 				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
 				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.6;
-				SDKROOT = "$(DEVELOPER_SDK_DIR)/MacOSX10.4u.sdk";
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_ppc = /Developer/SDKs/MacOSX10.4u.sdk;
 				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.6.sdk;
-				SYMROOT = "$(PROJECT_DIR)/../../Frameworks";
 			};
-			name = Release;
+			name = Deployment_ImageIO;
+		};
+		007288160F0DA5C400C302A9 /* Deployment_ImageIO */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LOAD_LBM,
+					LOAD_PCX,
+					LOAD_PNM,
+					LOAD_XCF,
+					LOAD_XPM,
+					LOAD_XXX,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL.framework/Headers,
+					"~/Library/Frameworks/SDL.framework/Headers",
+				);
+				INFOPLIST_FILE = "Info-Framework__Upgraded_.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				OTHER_CFLAGS = "";
+				PRODUCT_NAME = SDL_image;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wno-four-char-constants",
+				);
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Deployment_ImageIO;
+		};
+		007288170F0DA5C400C302A9 /* Deployment_ImageIO */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LOAD_LBM,
+					LOAD_PCX,
+					LOAD_PNM,
+					LOAD_XCF,
+					LOAD_XPM,
+					LOAD_XXX,
+				);
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL.framework/Headers,
+					"~/Library/Frameworks/SDL.framework/Headers",
+				);
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "";
+				OTHER_LIBTOOL_FLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL_image;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Deployment_ImageIO;
+		};
+		007288180F0DA5C400C302A9 /* Deployment_ImageIO */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Create DMG";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = NO;
+			};
+			name = Deployment_ImageIO;
+		};
+		00B7E3AB097EB73D00826121 /* Development_legacy */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LOAD_BMP,
+					LOAD_GIF,
+					LOAD_JPG,
+					LOAD_LBM,
+					LOAD_PCX,
+					LOAD_PNG,
+					LOAD_PNM,
+					LOAD_TGA,
+					LOAD_XCF,
+					LOAD_XPM,
+					LOAD_XXX,
+					LOAD_TIF,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL.framework/Headers,
+					"~/Library/Frameworks/SDL.framework/Headers",
+					"$(HEADER_SEARCH_PATHS_QUOTED_FOR_TARGET_1)",
+				);
+				HEADER_SEARCH_PATHS_QUOTED_FOR_TARGET_1 = "\"graphics/lib\"";
+				INFOPLIST_FILE = "Info-Framework__Upgraded_.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"graphics/lib\"";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-seg1addr",
+					0x31000000,
+					"-ljpeg",
+					"-lpng",
+					"-lz",
+				);
+				PRODUCT_NAME = SDL_image;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wno-four-char-constants",
+				);
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Development_legacy;
+		};
+		00B7E3AC097EB73D00826121 /* Deployment_legacy */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LOAD_BMP,
+					LOAD_GIF,
+					LOAD_JPG,
+					LOAD_LBM,
+					LOAD_PCX,
+					LOAD_PNG,
+					LOAD_PNM,
+					LOAD_TGA,
+					LOAD_XCF,
+					LOAD_XPM,
+					LOAD_XXX,
+					LOAD_TIF,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL.framework/Headers,
+					"~/Library/Frameworks/SDL.framework/Headers",
+					graphics/include,
+				);
+				INFOPLIST_FILE = "Info-Framework__Upgraded_.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"graphics/lib\"";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-seg1addr",
+					0x31000000,
+					"-ljpeg",
+					"-lpng",
+					"-lz",
+				);
+				PRODUCT_NAME = SDL_image;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wno-four-char-constants",
+				);
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Deployment_legacy;
+		};
+		00B7E3AD097EB73D00826121 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LOAD_LBM,
+					LOAD_PCX,
+					LOAD_PNM,
+					LOAD_XCF,
+					LOAD_XPM,
+					LOAD_XXX,
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL.framework/Headers,
+					"~/Library/Frameworks/SDL.framework/Headers",
+					graphics/include,
+				);
+				INFOPLIST_FILE = "Info-Framework__Upgraded_.plist";
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = "\"graphics/lib\"";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-seg1addr",
+					0x31000000,
+					"-ljpeg",
+					"-lpng",
+					"-lz",
+				);
+				PRODUCT_NAME = SDL_image;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wall",
+					"-Wno-four-char-constants",
+				);
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Default;
+		};
+		00B7E3AF097EB73D00826121 /* Development_legacy */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LOAD_BMP,
+					LOAD_GIF,
+					LOAD_JPG,
+					LOAD_LBM,
+					LOAD_PCX,
+					LOAD_PNG,
+					LOAD_PNM,
+					LOAD_TGA,
+					LOAD_XCF,
+					LOAD_XPM,
+					LOAD_XXX,
+					LOAD_TIF,
+				);
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL.framework/Headers,
+					"~/Library/Frameworks/SDL.framework/Headers",
+					graphics/include,
+				);
+				LIBRARY_SEARCH_PATHS = graphics/lib;
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ljpeg",
+					"-lpng",
+				);
+				OTHER_LIBTOOL_FLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL_image;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Development_legacy;
+		};
+		00B7E3B0097EB73D00826121 /* Deployment_legacy */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LOAD_BMP,
+					LOAD_GIF,
+					LOAD_JPG,
+					LOAD_LBM,
+					LOAD_PCX,
+					LOAD_PNG,
+					LOAD_PNM,
+					LOAD_TGA,
+					LOAD_XCF,
+					LOAD_XPM,
+					LOAD_XXX,
+					LOAD_TIF,
+				);
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL.framework/Headers,
+					"~/Library/Frameworks/SDL.framework/Headers",
+					graphics/include,
+				);
+				LIBRARY_SEARCH_PATHS = graphics/lib;
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = (
+					"-ljpeg",
+					"-lpng",
+				);
+				OTHER_LIBTOOL_FLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL_image;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Deployment_legacy;
+		};
+		00B7E3B1097EB73D00826121 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LOAD_LBM,
+					LOAD_PCX,
+					LOAD_PNM,
+					LOAD_XCF,
+					LOAD_XPM,
+					LOAD_XXX,
+				);
+				HEADER_SEARCH_PATHS = (
+					/Library/Frameworks/SDL.framework/Headers,
+					"~/Library/Frameworks/SDL.framework/Headers",
+					graphics/include,
+				);
+				LIBRARY_SEARCH_PATHS = graphics/lib;
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "";
+				OTHER_LIBTOOL_FLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = SDL_image;
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Default;
+		};
+		00B7E3B3097EB73D00826121 /* Development_legacy */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Create DMG";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = YES;
+			};
+			name = Development_legacy;
+		};
+		00B7E3B4097EB73D00826121 /* Deployment_legacy */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Create DMG";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				ZERO_LINK = NO;
+			};
+			name = Deployment_legacy;
+		};
+		00B7E3B5097EB73D00826121 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = "Create DMG";
+				REZ_EXECUTABLE = YES;
+				SECTORDER_FLAGS = "";
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+			};
+			name = Default;
+		};
+		00B7E3B7097EB73D00826121 /* Development_legacy */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(HOME)/Library/Frameworks",
+					/Library/Frameworks,
+				);
+				GCC_VERSION_i386 = 4.0;
+				GCC_VERSION_ppc = 4.0;
+				GCC_VERSION_x86_64 = 4.2;
+				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.6;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_ppc = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.6.sdk;
+			};
+			name = Development_legacy;
+		};
+		00B7E3B8097EB73D00826121 /* Deployment_legacy */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(HOME)/Library/Frameworks",
+					/Library/Frameworks,
+				);
+				GCC_VERSION_i386 = 4.0;
+				GCC_VERSION_ppc = 4.0;
+				GCC_VERSION_x86_64 = 4.2;
+				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.6;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_ppc = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.6.sdk;
+			};
+			name = Deployment_legacy;
+		};
+		00B7E3B9097EB73D00826121 /* Default */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
+				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(HOME)/Library/Frameworks",
+					/Library/Frameworks,
+				);
+				GCC_VERSION_i386 = 4.0;
+				GCC_VERSION_ppc = 4.0;
+				GCC_VERSION_x86_64 = 4.2;
+				MACOSX_DEPLOYMENT_TARGET_i386 = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_ppc = 10.4;
+				MACOSX_DEPLOYMENT_TARGET_x86_64 = 10.6;
+				SDKROOT = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_i386 = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_ppc = /Developer/SDKs/MacOSX10.4u.sdk;
+				SDKROOT_x86_64 = /Developer/SDKs/MacOSX10.6.sdk;
+			};
+			name = Default;
 		};
 /* End XCBuildConfiguration section */
 
@@ -782,38 +1000,50 @@
 		00B7E3AA097EB73D00826121 /* Build configuration list for PBXNativeTarget "Framework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				00B7E3AB097EB73D00826121 /* Debug */,
-				00B7E3AC097EB73D00826121 /* Release */,
+				007288160F0DA5C400C302A9 /* Deployment_ImageIO */,
+				007288120F0DA5BA00C302A9 /* Development_ImageIO */,
+				00B7E3AB097EB73D00826121 /* Development_legacy */,
+				00B7E3AC097EB73D00826121 /* Deployment_legacy */,
+				00B7E3AD097EB73D00826121 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Default;
 		};
 		00B7E3AE097EB73D00826121 /* Build configuration list for PBXNativeTarget "Static Library" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				00B7E3AF097EB73D00826121 /* Debug */,
-				00B7E3B0097EB73D00826121 /* Release */,
+				007288170F0DA5C400C302A9 /* Deployment_ImageIO */,
+				007288130F0DA5BA00C302A9 /* Development_ImageIO */,
+				00B7E3AF097EB73D00826121 /* Development_legacy */,
+				00B7E3B0097EB73D00826121 /* Deployment_legacy */,
+				00B7E3B1097EB73D00826121 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Default;
 		};
 		00B7E3B2097EB73D00826121 /* Build configuration list for PBXNativeTarget "Create DMG" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				00B7E3B3097EB73D00826121 /* Debug */,
-				00B7E3B4097EB73D00826121 /* Release */,
+				007288180F0DA5C400C302A9 /* Deployment_ImageIO */,
+				007288140F0DA5BA00C302A9 /* Development_ImageIO */,
+				00B7E3B3097EB73D00826121 /* Development_legacy */,
+				00B7E3B4097EB73D00826121 /* Deployment_legacy */,
+				00B7E3B5097EB73D00826121 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Default;
 		};
 		00B7E3B6097EB73D00826121 /* Build configuration list for PBXProject "SDL_image" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				00B7E3B7097EB73D00826121 /* Debug */,
-				00B7E3B8097EB73D00826121 /* Release */,
+				007288150F0DA5C400C302A9 /* Deployment_ImageIO */,
+				007288110F0DA5BA00C302A9 /* Development_ImageIO */,
+				00B7E3B7097EB73D00826121 /* Development_legacy */,
+				00B7E3B8097EB73D00826121 /* Deployment_legacy */,
+				00B7E3B9097EB73D00826121 /* Default */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Default;
 		};
 /* End XCConfigurationList section */
 	};

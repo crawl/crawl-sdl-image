@@ -18,4 +18,9 @@ You may alternatively install it in <your home directory>/Library/Frameworks if 
 
 
 (Partial) History of PB/Xcode projects:
+2009-09-21 - Updated for 64-bit (Snow Leopard) Universal Binaries.
+	Switched to 10.4 minimum requirement.
+	Switched to ImageIO backend for distribution.
+	Static libraries of libpng and libjpeg are no longer maintained and may eventually be removed.
+	
 2006-01-31 - First entry in history. Updated for Universal Binaries. Static libraries of libpng and libjpeg have been brought up-to-date and built as Universal.
