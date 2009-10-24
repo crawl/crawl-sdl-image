@@ -8,6 +8,8 @@
  */
 #include "SDL_image.h"
 
+#if defined(__APPLE__)
+
 // For ImageIO framework and also LaunchServices framework (for UTIs)
 #include <ApplicationServices/ApplicationServices.h>
 // Used because CGDataProviderCreate became deprecated in 10.5
@@ -551,4 +553,4 @@ SDL_Surface* IMG_Load(const char *file)
 	}
 	return sdl_surface;
 }
-
+#endif
