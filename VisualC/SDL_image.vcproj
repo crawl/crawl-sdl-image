@@ -18,7 +18,6 @@
 	<Configurations>
 		<Configuration
 			Name="Debug|Win32"
-			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
 			InheritedPropertySheets="..\..\Common.vsprops;..\..\DLL.vsprops;..\..\Debug.vsprops"
 			UseOfMFC="0"
@@ -50,7 +49,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="graphics\include;..\..\SDL\include"
-				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;LOAD_BMP;LOAD_PNG"
+				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;LOAD_BMP;LOAD_PNG;DECLSPEC="
 				MinimalRebuild="true"
 				PrecompiledHeaderFile=".\Debug/SDL_image.pch"
 			/>
@@ -119,7 +118,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="graphics\include;..\..\SDL\include"
-				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;LOAD_BMP;LOAD_PNG"
+				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;LOAD_BMP;LOAD_PNG;DECLSPEC="
 				MinimalRebuild="true"
 				PrecompiledHeaderFile=".\Debug/SDL_image.pch"
 			/>
@@ -157,9 +156,7 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
-			ConfigurationType="2"
+			ConfigurationType="4"
 			InheritedPropertySheets="..\..\Common.vsprops;..\..\DLL.vsprops;..\..\Release.vsprops"
 			UseOfMFC="0"
 			ATLMinimizesCRunTimeLibraryUsage="false"
@@ -191,7 +188,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="graphics\include;..\..\SDL\include"
-				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;LOAD_BMP;LOAD_PNG"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;LOAD_BMP;LOAD_PNG;DECLSPEC="
 				PrecompiledHeaderFile=".\Release/SDL_image.pch"
 			/>
 			<Tool
@@ -206,13 +203,10 @@
 				Name="VCPreLinkEventTool"
 			/>
 			<Tool
-				Name="VCLinkerTool"
+				Name="VCLibrarianTool"
 			/>
 			<Tool
 				Name="VCALinkTool"
-			/>
-			<Tool
-				Name="VCManifestTool"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
@@ -224,12 +218,6 @@
 			/>
 			<Tool
 				Name="VCFxCopTool"
-			/>
-			<Tool
-				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -269,7 +257,7 @@
 				Optimization="2"
 				InlineFunctionExpansion="1"
 				AdditionalIncludeDirectories="graphics\include;..\..\SDL\include"
-				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;LOAD_BMP;LOAD_PNG"
+				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;LOAD_BMP;LOAD_PNG;DECLSPEC="
 				StringPooling="true"
 				EnableFunctionLevelLinking="true"
 				PrecompiledHeaderFile=".\Release/SDL_image.pch"
