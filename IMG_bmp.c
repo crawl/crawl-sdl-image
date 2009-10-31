@@ -575,10 +575,10 @@ LoadICOCUR_RW(SDL_RWops * src, int type, int freesrc)
         int bWidth = SDL_Read8(src);    /* Uint8, but 0 = 256 ! */
         int bHeight = SDL_Read8(src);   /* Uint8, but 0 = 256 ! */
         int bColorCount = SDL_Read8(src);       /* Uint8, but 0 = 256 ! */
-        /*Uint8 bReserved =*/ SDL_Read8(src);
-        /*Uint16 wPlanes =*/ SDL_ReadLE16(src);
-        /*Uint16 wBitCount =*/ SDL_ReadLE16(src);
-        /*Uint32 dwBytesInRes =*/ SDL_ReadLE32(src);
+        Uint8 bReserved = SDL_Read8(src);
+        Uint16 wPlanes = SDL_ReadLE16(src);
+        Uint16 wBitCount = SDL_ReadLE16(src);
+        Uint32 dwBytesInRes = SDL_ReadLE32(src);
         Uint32 dwImageOffset = SDL_ReadLE32(src);
 
         if (!bWidth)
