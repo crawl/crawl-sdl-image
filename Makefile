@@ -48,7 +48,7 @@ $(libdir)/%.a: %.a
 install: $(HEADERS_INST) $(libdir)/$(LIB)
 
 clean:
-	$(RM) $(OBJECTS) $(LIB)
+	$(RM) $(OBJECTS) $(LIB) .cflags
 
 distclean: clean
 
@@ -56,5 +56,16 @@ $(LIB): $(OBJECTS)
 	$(QUIET_AR)$(AR) rcu $@ $^
 	$(QUIET_RANLIB)$(RANLIB) $@
 
-%.o: %.c
+%.o: %.c .cflags
 	$(QUIET_CC)$(CC) $(CFLAGS) -o $@ -c $<
+
+TRACK_CFLAGS = $(subst ','\'',$(CC) $(CFLAGS))
+
+.cflags: .force-cflags
+	@FLAGS='$(TRACK_CFLAGS)'; \
+    if test x"$$FLAGS" != x"`cat .cflags 2>/dev/null`" ; then \
+        echo "    * rebuilding sdl-image: new build flags or prefix"; \
+        echo "$$FLAGS" > .cflags; \
+    fi
+
+.PHONY: .force-cflags
