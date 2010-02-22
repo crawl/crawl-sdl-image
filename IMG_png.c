@@ -20,6 +20,8 @@
     slouken@libsdl.org
 */
 
+#if !defined(__APPLE__) || defined(SDL_IMAGE_USE_COMMON_BACKEND)
+
 /* This is a PNG image file loading framework */
 
 #include <stdlib.h>
@@ -31,25 +33,25 @@
 
 /*=============================================================================
         File: SDL_png.c
-     Purpose: A PNG loader and saver for the SDL library
-    Revision:
+     Purpose: A PNG loader and saver for the SDL library      
+    Revision: 
   Created by: Philippe Lavoie          (2 November 1998)
               lavoie@zeus.genie.uottawa.ca
- Modified by:
+ Modified by: 
 
  Copyright notice:
           Copyright (C) 1998 Philippe Lavoie
-
+ 
           This library is free software; you can redistribute it and/or
           modify it under the terms of the GNU Library General Public
           License as published by the Free Software Foundation; either
           version 2 of the License, or (at your option) any later version.
-
+ 
           This library is distributed in the hope that it will be useful,
           but WITHOUT ANY WARRANTY; without even the implied warranty of
           MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
           Library General Public License for more details.
-
+ 
           You should have received a copy of the GNU Library General Public
           License along with this library; if not, write to the Free
           Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
@@ -281,7 +283,7 @@ int IMG_isPNG(SDL_RWops *src)
 			is_PNG = 1;
 		}
 	}
-	SDL_RWseek(src, start, SEEK_SET);
+	SDL_RWseek(src, start, RW_SEEK_SET);
 	return(is_PNG);
 }
 
@@ -318,7 +320,7 @@ SDL_Surface *IMG_LoadPNG_RW(SDL_RWops *src)
 	}
 	start = SDL_RWtell(src);
 
-	if ( IMG_Init(IMG_INIT_PNG) < 0 ) {
+	if ( !IMG_Init(IMG_INIT_PNG) ) {
 		return NULL;
 	}
 
@@ -408,7 +410,7 @@ SDL_Surface *IMG_LoadPNG_RW(SDL_RWops *src)
 			&color_type, &interlace_type, NULL, NULL);
 
 	/* Allocate the SDL surface to hold the image */
-	Rmask = Gmask = Bmask = Amask = 0 ;
+	Rmask = Gmask = Bmask = Amask = 0 ; 
 	if ( color_type != PNG_COLOR_TYPE_PALETTE ) {
 		if ( SDL_BYTEORDER == SDL_LIL_ENDIAN ) {
 			Rmask = 0x000000FF;
@@ -473,7 +475,7 @@ SDL_Surface *IMG_LoadPNG_RW(SDL_RWops *src)
 		    palette->colors[i].b = i;
 		}
 	    } else if (info_ptr->num_palette > 0 ) {
-		palette->ncolors = info_ptr->num_palette;
+		palette->ncolors = info_ptr->num_palette; 
 		for( i=0; i<info_ptr->num_palette; ++i ) {
 		    palette->colors[i].b = info_ptr->palette[i].blue;
 		    palette->colors[i].g = info_ptr->palette[i].green;
@@ -492,14 +494,14 @@ done:	/* Clean up and return */
 		free(row_pointers);
 	}
 	if ( error ) {
-		SDL_RWseek(src, start, SEEK_SET);
+		SDL_RWseek(src, start, RW_SEEK_SET);
 		if ( surface ) {
 			SDL_FreeSurface(surface);
 			surface = NULL;
 		}
 		IMG_SetError(error);
 	}
-	return(surface);
+	return(surface); 
 }
 
 #else
@@ -527,3 +529,5 @@ SDL_Surface *IMG_LoadPNG_RW(SDL_RWops *src)
 }
 
 #endif /* LOAD_PNG */
+
+#endif /* !defined(__APPLE__) || defined(SDL_IMAGE_USE_COMMON_BACKEND) */

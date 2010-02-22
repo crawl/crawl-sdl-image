@@ -105,7 +105,7 @@ int main(int argc, char *argv[])
 		}
 #if 0
 		rw_ops = SDL_RWFromFile(argv[1], "r");
-
+		
 		fprintf(stderr, "BMP:\t%d\n", IMG_isBMP(rw_ops));
 		fprintf(stderr, "GIF:\t%d\n", IMG_isGIF(rw_ops));
 		fprintf(stderr, "JPG:\t%d\n", IMG_isJPG(rw_ops));

@@ -32,7 +32,7 @@
  *
  * The result is an 8bpp indexed surface if possible, otherwise 32bpp.
  * The colourkey is correctly set if transparency is used.
- *
+ * 
  * Besides the standard API, also provides
  *
  *     SDL_Surface *IMG_ReadXPMFromArray(char **xpm)
@@ -68,7 +68,7 @@ int IMG_isXPM(SDL_RWops *src)
 			is_XPM = 1;
 		}
 	}
-	SDL_RWseek(src, start, SEEK_SET);
+	SDL_RWseek(src, start, RW_SEEK_SET);
 	return(is_XPM);
 }
 
@@ -328,7 +328,7 @@ static SDL_Surface *load_xpm(char **xpm, SDL_RWops *src)
 	linebuf = NULL;
 	buflen = 0;
 
-	if ( src )
+	if ( src ) 
 		start = SDL_RWtell(src);
 
 	if(xpm)
@@ -457,7 +457,7 @@ static SDL_Surface *load_xpm(char **xpm, SDL_RWops *src)
 done:
 	if(error) {
 		if ( src )
-			SDL_RWseek(src, start, SEEK_SET);
+			SDL_RWseek(src, start, RW_SEEK_SET);
 		if ( image ) {
 			SDL_FreeSurface(image);
 			image = NULL;

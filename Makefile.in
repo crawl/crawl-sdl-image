@@ -90,7 +90,7 @@ LTLIBRARIES = $(lib_LTLIBRARIES)
 am__DEPENDENCIES_1 =
 am_libSDL_image_la_OBJECTS = IMG.lo IMG_bmp.lo IMG_gif.lo IMG_jpg.lo \
 	IMG_lbm.lo IMG_pcx.lo IMG_png.lo IMG_pnm.lo IMG_tga.lo \
-	IMG_tif.lo IMG_xcf.lo IMG_xpm.lo IMG_xv.lo
+	IMG_tif.lo IMG_xcf.lo IMG_xpm.lo IMG_xv.lo IMG_ImageIO.lo
 libSDL_image_la_OBJECTS = $(am_libSDL_image_la_OBJECTS)
 libSDL_image_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
@@ -277,7 +277,8 @@ libSDL_image_la_SOURCES = \
 	IMG_tif.c		\
 	IMG_xcf.c		\
 	IMG_xpm.c		\
-	IMG_xv.c
+	IMG_xv.c		\
+	IMG_ImageIO.c
 
 EXTRA_DIST = \
 	CHANGES			\
@@ -289,7 +290,6 @@ EXTRA_DIST = \
 	MPWmake.sea.bin		\
 	Watcom-OS2.zip		\
 	IMG_xxx.c		\
-	IMG_ImageIO.c		\
 	IMG_UIImage.m		\
 	SDL_image.spec		\
 	gcc-fat.sh		\
@@ -384,7 +384,7 @@ clean-libLTLIBRARIES:
 	  echo "rm -f \"$${dir}/so_locations\""; \
 	  rm -f "$${dir}/so_locations"; \
 	done
-libSDL_image.la: $(libSDL_image_la_OBJECTS) $(libSDL_image_la_DEPENDENCIES)
+libSDL_image.la: $(libSDL_image_la_OBJECTS) $(libSDL_image_la_DEPENDENCIES) 
 	$(libSDL_image_la_LINK) -rpath $(libdir) $(libSDL_image_la_OBJECTS) $(libSDL_image_la_LIBADD) $(LIBS)
 
 clean-noinstPROGRAMS:
@@ -395,7 +395,7 @@ clean-noinstPROGRAMS:
 	list=`for p in $$list; do echo "$$p"; done | sed 's/$(EXEEXT)$$//'`; \
 	echo " rm -f" $$list; \
 	rm -f $$list
-showimage$(EXEEXT): $(showimage_OBJECTS) $(showimage_DEPENDENCIES)
+showimage$(EXEEXT): $(showimage_OBJECTS) $(showimage_DEPENDENCIES) 
 	@rm -f showimage$(EXEEXT)
 	$(LINK) $(showimage_OBJECTS) $(showimage_LDADD) $(LIBS)
 
@@ -406,6 +406,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/IMG.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/IMG_ImageIO.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/IMG_bmp.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/IMG_gif.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/IMG_jpg.Plo@am__quote@

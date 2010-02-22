@@ -66,7 +66,7 @@ int IMG_isLBM( SDL_RWops *src )
 	int   is_LBM;
 	Uint8 magic[4+4+4];
 
-	if ( !src )
+	if ( !src ) 
 		return 0;
 	start = SDL_RWtell(src);
 	is_LBM = 0;
@@ -79,7 +79,7 @@ int IMG_isLBM( SDL_RWops *src )
 			is_LBM = 1;
 		}
 	}
-	SDL_RWseek(src, start, SEEK_SET);
+	SDL_RWseek(src, start, RW_SEEK_SET);
 	return( is_LBM );
 }
 
@@ -151,7 +151,7 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 
 	while ( memcmp( id, "BODY", 4 ) != 0 )
 	{
-		if ( !SDL_RWread( src, id, 4, 1 ) )
+		if ( !SDL_RWread( src, id, 4, 1 ) ) 
 		{
 			error="error reading IFF chunk";
 			goto done;
@@ -220,7 +220,7 @@ SDL_Surface *IMG_LoadLBM_RW( SDL_RWops *src )
 			if ( size & 1 )	++size;  	/* padding ! */
 			size -= bytesloaded;
 			/* skip the remaining bytes of this chunk */
-			if ( size )	SDL_RWseek( src, size, SEEK_CUR );
+			if ( size )	SDL_RWseek( src, size, RW_SEEK_CUR );
 		}
 	}
 
@@ -474,7 +474,7 @@ done:
 
 	if ( error )
 	{
-		SDL_RWseek(src, start, SEEK_SET);
+		SDL_RWseek(src, start, RW_SEEK_SET);
 		if ( Image ) {
 			SDL_FreeSurface( Image );
 			Image = NULL;

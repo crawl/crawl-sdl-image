@@ -20,6 +20,8 @@
     slouken@libsdl.org
 */
 
+#if !defined(__APPLE__) || defined(SDL_IMAGE_USE_COMMON_BACKEND)
+
 /* This is a BMP image file loading framework */
 /* ICO/CUR file support is here as well since it uses similar internal
  * representation */
@@ -47,7 +49,7 @@ int IMG_isBMP(SDL_RWops *src)
 			is_BMP = 1;
 		}
 	}
-	SDL_RWseek(src, start, SEEK_SET);
+	SDL_RWseek(src, start, RW_SEEK_SET);
 	return(is_BMP);
 }
 
@@ -68,9 +70,9 @@ static int IMG_isICOCUR(SDL_RWops *src, int type)
     bfReserved = SDL_ReadLE16(src);
     bfType = SDL_ReadLE16(src);
     bfCount = SDL_ReadLE16(src);
-    if ((bfReserved == 0) && (bfType == type) && (bfCount != 0))
+    if ((bfReserved == 0) && (bfType == type) && (bfCount != 0)) 
     	is_ICOCUR = 1;
-	SDL_RWseek(src, start, SEEK_SET);
+	SDL_RWseek(src, start, RW_SEEK_SET);
 
 	return (is_ICOCUR);
 }
@@ -361,7 +363,7 @@ static SDL_Surface *LoadBMP_RW (SDL_RWops *src, int freesrc)
 	/* Load the palette, if any */
 	palette = (surface->format)->palette;
 	if ( palette ) {
-		if ( SDL_RWseek(src, fp_offset+14+biSize, SEEK_SET) < 0 ) {
+		if ( SDL_RWseek(src, fp_offset+14+biSize, RW_SEEK_SET) < 0 ) {
 			SDL_Error(SDL_EFSEEK);
 			was_error = SDL_TRUE;
 			goto done;
@@ -380,20 +382,20 @@ static SDL_Surface *LoadBMP_RW (SDL_RWops *src, int freesrc)
 				SDL_RWread(src, &palette->colors[i].g, 1, 1);
 				SDL_RWread(src, &palette->colors[i].r, 1, 1);
 				palette->colors[i].unused = 0;
-			}
+			}	
 		} else {
 			for ( i = 0; i < (int)biClrUsed; ++i ) {
 				SDL_RWread(src, &palette->colors[i].b, 1, 1);
 				SDL_RWread(src, &palette->colors[i].g, 1, 1);
 				SDL_RWread(src, &palette->colors[i].r, 1, 1);
 				SDL_RWread(src, &palette->colors[i].unused, 1, 1);
-			}
+			}	
 		}
 		palette->ncolors = biClrUsed;
 	}
 
 	/* Read the surface pixels.  Note that the bmp image is upside down */
-	if ( SDL_RWseek(src, fp_offset+bfOffBits, SEEK_SET) < 0 ) {
+	if ( SDL_RWseek(src, fp_offset+bfOffBits, RW_SEEK_SET) < 0 ) {
 		SDL_Error(SDL_EFSEEK);
 		was_error = SDL_TRUE;
 		goto done;
@@ -489,7 +491,7 @@ static SDL_Surface *LoadBMP_RW (SDL_RWops *src, int freesrc)
 done:
 	if ( was_error ) {
 		if ( src ) {
-			SDL_RWseek(src, fp_offset, SEEK_SET);
+			SDL_RWseek(src, fp_offset, RW_SEEK_SET);
 		}
 		if ( surface ) {
 			SDL_FreeSurface(surface);
@@ -839,3 +841,5 @@ SDL_Surface *IMG_LoadICO_RW(SDL_RWops *src)
 }
 
 #endif /* LOAD_BMP */
+
+#endif /* !defined(__APPLE__) || defined(SDL_IMAGE_USE_COMMON_BACKEND) */

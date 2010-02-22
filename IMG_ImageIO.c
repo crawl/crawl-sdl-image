@@ -6,6 +6,9 @@
  *  Copyright 2009 __MyCompanyName__. All rights reserved.
  *
  */
+
+#if defined(__APPLE__) && !defined(SDL_IMAGE_USE_COMMON_BACKEND)
+
 #include "SDL_image.h"
 
 // For ImageIO framework and also LaunchServices framework (for UTIs)
@@ -28,7 +31,7 @@ static size_t MyProviderGetBytesCallback(void* rwops_userdata, void* quartz_buff
 // so you can clean up any resources.
 static void MyProviderReleaseInfoCallback(void* rwops_userdata)
 {
-	// What should I put here?
+	// What should I put here? 
 	// I think the user and SDL_RWops controls closing, so I don't do anything.
 }
 
@@ -43,7 +46,7 @@ off_t MyProviderSkipForwardBytesCallback(void* rwops_userdata, off_t the_count)
 	off_t start_position = SDL_RWtell((struct SDL_RWops *)rwops_userdata);
 	SDL_RWseek((struct SDL_RWops *)rwops_userdata, the_count, RW_SEEK_CUR);
     off_t end_position = SDL_RWtell((struct SDL_RWops *)rwops_userdata);
-    return (end_position - start_position);
+    return (end_position - start_position);	
 }
 #else // CGDataProviderCreate was deprecated in 10.5
 static void MyProviderSkipBytesCallback(void* rwops_userdata, size_t the_count)
@@ -64,7 +67,7 @@ static CGImageSourceRef CreateCGImageSourceFromRWops(SDL_RWops* rw_ops, CFDictio
 	CGImageSourceRef source_ref;
 
 	// Similar to SDL_RWops, Apple has their own callbacks for dealing with data streams.
-
+	
 #if MAC_OS_X_VERSION_MAX_ALLOWED >= 1050 // CGDataProviderCreateSequential was introduced in 10.5; CGDataProviderCreate is deprecated
 	CGDataProviderSequentialCallbacks provider_callbacks =
 	{
@@ -74,12 +77,12 @@ static CGImageSourceRef CreateCGImageSourceFromRWops(SDL_RWops* rw_ops, CFDictio
 		MyProviderRewindCallback,
 		MyProviderReleaseInfoCallback
 	};
-
+	
 	CGDataProviderRef data_provider = CGDataProviderCreateSequential(rw_ops, &provider_callbacks);
-
-
+	
+	
 #else // CGDataProviderCreate was deprecated in 10.5
-
+	
 	CGDataProviderCallbacks provider_callbacks =
 	{
 		MyProviderGetBytesCallback,
@@ -87,7 +90,7 @@ static CGImageSourceRef CreateCGImageSourceFromRWops(SDL_RWops* rw_ops, CFDictio
 		MyProviderRewindCallback,
 		MyProviderReleaseInfoCallback
 	};
-
+	
 	CGDataProviderRef data_provider = CGDataProviderCreate(rw_ops, &provider_callbacks);
 #endif
 	// Get the CGImageSourceRef.
@@ -104,7 +107,7 @@ static CGImageSourceRef CreateCGImageSourceFromFile(const char* the_path)
     CFURLRef the_url = NULL;
     CGImageSourceRef source_ref = NULL;
 	CFStringRef cf_string = NULL;
-
+	
 	/* Create a CFString from a C string */
 	cf_string = CFStringCreateWithCString(
 										  NULL,
@@ -115,28 +118,28 @@ static CGImageSourceRef CreateCGImageSourceFromFile(const char* the_path)
 	{
 		return NULL;
 	}
-
+	
 	/* Create a CFURL from a CFString */
     the_url = CFURLCreateWithFileSystemPath(
-											NULL,
+											NULL, 
 											cf_string,
 											kCFURLPOSIXPathStyle,
 											false
 											);
-
+	
 	/* Don't need the CFString any more (error or not) */
 	CFRelease(cf_string);
-
+	
 	if(!the_url)
 	{
 		return NULL;
 	}
-
-
+	
+	
     source_ref = CGImageSourceCreateWithURL(the_url, NULL);
 	/* Don't need the URL any more (error or not) */
 	CFRelease(the_url);
-
+	
 	return source_ref;
 }
 
@@ -145,12 +148,12 @@ static CGImageSourceRef CreateCGImageSourceFromFile(const char* the_path)
 static CGImageRef CreateCGImageFromCGImageSource(CGImageSourceRef image_source)
 {
 	CGImageRef image_ref = NULL;
-
+	
     if(NULL == image_source)
 	{
 		return NULL;
 	}
-
+	
 	// Get the first item in the image source (some image formats may
 	// contain multiple items).
 	image_ref = CGImageSourceCreateImageAtIndex(image_source, 0, NULL);
@@ -166,10 +169,10 @@ static CFDictionaryRef CreateHintDictionary(CFStringRef uti_string_hint)
 		// Do a bunch of work to setup a CFDictionary containing the jpeg compression properties.
 		CFStringRef the_keys[1];
 		CFStringRef the_values[1];
-
+		
 		the_keys[0] = kCGImageSourceTypeIdentifierHint;
 		the_values[0] = uti_string_hint;
-
+		
 		// kCFTypeDictionaryKeyCallBacks or kCFCopyStringDictionaryKeyCallBacks?
 		hint_dictionary = CFDictionaryCreate(NULL, (const void**)&the_keys, (const void**)&the_values, 1, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
 	}
@@ -184,35 +187,35 @@ static int Internal_isType(SDL_RWops* rw_ops, CFStringRef uti_string_to_test)
 	CGImageSourceRef image_source;
 	CFStringRef uti_type;
 	Boolean is_type;
-
+	
 	CFDictionaryRef hint_dictionary = NULL;
-
-	hint_dictionary = CreateHintDictionary(uti_string_to_test);
+	
+	hint_dictionary = CreateHintDictionary(uti_string_to_test);	
 	image_source = CreateCGImageSourceFromRWops(rw_ops, hint_dictionary);
-
+	
 	if(hint_dictionary != NULL)
 	{
-		CFRelease(hint_dictionary);
+		CFRelease(hint_dictionary);		
 	}
-
+	
 	if(NULL == image_source)
 	{
 		return 0;
 	}
-
+	
 	// This will get the UTI of the container, not the image itself.
 	// Under most cases, this won't be a problem.
 	// But if a person passes an icon file which contains a bmp,
 	// the format will be of the icon file.
-	// But I think the main SDL_image codebase has this same problem so I'm not going to worry about it.
+	// But I think the main SDL_image codebase has this same problem so I'm not going to worry about it.	
 	uti_type = CGImageSourceGetType(image_source);
 	//	CFShow(uti_type);
-
+	
 	// Unsure if we really want conformance or equality
 	is_type = UTTypeConformsTo(uti_string_to_test, uti_type);
-
+	
 	CFRelease(image_source);
-
+	
 	return (int)is_type;
 }
 
@@ -227,162 +230,90 @@ static SDL_Surface* Create_SDL_Surface_From_CGImage(CGImageRef image_ref)
 	 * All this code should be scrutinized.
 	 */
 
-	size_t the_width = CGImageGetWidth(image_ref);
-	size_t the_height = CGImageGetHeight(image_ref);
-	CGRect the_rect = {{0, 0}, {the_width, the_height}};
+	size_t w = CGImageGetWidth(image_ref);
+	size_t h = CGImageGetHeight(image_ref);
+	CGRect rect = {{0, 0}, {w, h}};
 
-	size_t bits_per_pixel = CGImageGetBitsPerPixel(image_ref);
-	size_t bytes_per_row = CGImageGetBytesPerRow(image_ref);
-	//	size_t bits_per_component = CGImageGetBitsPerComponent(image_ref);
+	CGImageAlphaInfo alpha = CGImageGetAlphaInfo(image_ref);
+	//size_t bits_per_pixel = CGImageGetBitsPerPixel(image_ref);
 	size_t bits_per_component = 8;
 
-//	CGImageAlphaInfo alpha_info = CGImageGetAlphaInfo(image_ref);
-
-
-	SDL_Surface* sdl_surface = NULL;
+	SDL_Surface* surface;
+	Uint32 Amask;
 	Uint32 Rmask;
 	Uint32 Gmask;
 	Uint32 Bmask;
-	Uint32 Amask;
 
+	CGContextRef bitmap_context;
+	CGBitmapInfo bitmap_info;
+	CGColorSpaceRef color_space = CGColorSpaceCreateDeviceRGB();
 
-	CGContextRef bitmap_context = NULL;
-
-	CGColorSpaceRef color_space = NULL;
-	CGBitmapInfo bitmap_info = CGImageGetBitmapInfo(image_ref);
-
-
-	switch(bits_per_pixel)
-	{
-		case 8:
-		{
-			bytes_per_row = the_width*4;
-			//				color_space = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
-			color_space = CGColorSpaceCreateDeviceRGB();
-			//				bitmap_info = kCGImageAlphaPremultipliedFirst;
-#if __BIG_ENDIAN__
-			bitmap_info = kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Big; /* XRGB Big Endian */
-#else
-			bitmap_info = kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Little; /* XRGB Little Endian */
-#endif
-
-			Rmask = 0x00FF0000;
-			Gmask = 0x0000FF00;
-			Bmask = 0x000000FF;
-			Amask = 0x00000000;
-
-			sdl_surface = SDL_CreateRGBSurface(SDL_SWSURFACE,
-											   the_width, the_height, 32, Rmask, Gmask, Bmask, Amask);
-
-
-
-			break;
-		}
-		case 15:
-		case 16:
-		{
-			bytes_per_row = the_width*4;
-
-			color_space = CGColorSpaceCreateDeviceRGB();
-
-#if __BIG_ENDIAN__
-			bitmap_info = kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Big; /* XRGB Big Endian */
-#else
-			bitmap_info = kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Little; /* XRGB Little Endian */
-#endif
-			Rmask = 0x00FF0000;
-			Gmask = 0x0000FF00;
-			Bmask = 0x000000FF;
-			Amask = 0x00000000;
-
-
-			sdl_surface = SDL_CreateRGBSurface(SDL_SWSURFACE,
-											   the_width, the_height, 32, Rmask, Gmask, Bmask, Amask);
-
-			break;
-		}
-		case 24:
-		{
-			bytes_per_row = the_width*4;
-			//			color_space = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
-			color_space = CGColorSpaceCreateDeviceRGB();
-			//			bitmap_info = kCGImageAlphaNone;
-#if __BIG_ENDIAN__
-			bitmap_info = kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Big; /* XRGB Big Endian */
-#else
-			bitmap_info = kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Little; /* XRGB Little Endian */
-#endif
-			Rmask = 0x00FF0000;
-			Gmask = 0x0000FF00;
-			Bmask = 0x000000FF;
-			Amask = 0x00000000;
-
-			sdl_surface = SDL_CreateRGBSurface(SDL_SWSURFACE,
-											   the_width, the_height, 32, Rmask, Gmask, Bmask, Amask);
-
-			break;
-		}
-		case 32:
-		{
-
-			bytes_per_row = the_width*4;
-			//			color_space = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
-			color_space = CGColorSpaceCreateDeviceRGB();
-			//			bitmap_info = kCGImageAlphaPremultipliedFirst;
-#if __BIG_ENDIAN__
-			bitmap_info = kCGImageAlphaPremultipliedFirst | kCGBitmapByteOrder32Big; /* XRGB Big Endian */
-#else
-			bitmap_info = kCGImageAlphaPremultipliedFirst | kCGBitmapByteOrder32Little; /* XRGB Little Endian */
-#endif
-
-			Amask = 0xFF000000;
-			Rmask = 0x00FF0000;
-			Gmask = 0x0000FF00;
-			Bmask = 0x000000FF;
-
-			sdl_surface = SDL_CreateRGBSurface(SDL_SWSURFACE,
-											   the_width, the_height, 32, Rmask, Gmask, Bmask, Amask);
-			break;
-		}
-		default:
-		{
-            sdl_surface = NULL;
-            break;
-		}
-
+	if (alpha == kCGImageAlphaNone ||
+	    alpha == kCGImageAlphaNoneSkipFirst ||
+	    alpha == kCGImageAlphaNoneSkipLast) {
+		bitmap_info = kCGImageAlphaNoneSkipFirst | kCGBitmapByteOrder32Host; /* XRGB */
+		Amask = 0x00000000;
+	} else {
+		/* kCGImageAlphaFirst isn't supported */
+		//bitmap_info = kCGImageAlphaFirst | kCGBitmapByteOrder32Host; /* ARGB */
+		bitmap_info = kCGImageAlphaPremultipliedFirst | kCGBitmapByteOrder32Host; /* ARGB */
+		Amask = 0xFF000000;
 	}
 
-	if(NULL == sdl_surface)
+	Rmask = 0x00FF0000;
+	Gmask = 0x0000FF00;
+	Bmask = 0x000000FF;
+
+	surface = SDL_CreateRGBSurface(SDL_SWSURFACE, w, h, 32, Rmask, Gmask, Bmask, Amask);
+	if (surface)
 	{
-		if(color_space != NULL)
-		{
-			CGColorSpaceRelease(color_space);
+		// Sets up a context to be drawn to with surface->pixels as the area to be drawn to
+		bitmap_context = CGBitmapContextCreate(
+															surface->pixels,
+															surface->w,
+															surface->h,
+															bits_per_component,
+															surface->pitch,
+															color_space,
+															bitmap_info
+															);
+
+		// Draws the image into the context's image_data
+		CGContextDrawImage(bitmap_context, rect, image_ref);
+
+		CGContextRelease(bitmap_context);
+
+		// FIXME: Reverse the premultiplied alpha
+		if ((bitmap_info & kCGBitmapAlphaInfoMask) == kCGImageAlphaPremultipliedFirst) {
+			int i, j;
+			Uint8 *p = (Uint8 *)surface->pixels;
+			for (i = surface->h * surface->pitch/4; i--; ) {
+#if __LITTLE_ENDIAN__
+				Uint8 A = p[3];
+				if (A) {
+					for (j = 0; j < 3; ++j) {
+						p[j] = (p[j] * 255) / A;
+					}
+				}
+#else
+				Uint8 A = p[0];
+				if (A) {
+					for (j = 1; j < 4; ++j) {
+						p[j] = (p[j] * 255) / A;
+					}
+				}
+#endif /* ENDIAN */
+				p += 4;
+			}
 		}
-		return NULL;
 	}
 
+	if (color_space)
+	{
+		CGColorSpaceRelease(color_space);			
+	}
 
-	// Sets up a context to be drawn to with sdl_surface->pixels as the area to be drawn to
-	bitmap_context = CGBitmapContextCreate(
-														sdl_surface->pixels,
-														the_width,
-														the_height,
-														bits_per_component,
-														bytes_per_row,
-														color_space,
-														bitmap_info
-														);
-
-	// Draws the image into the context's image_data
-	CGContextDrawImage(bitmap_context, the_rect, image_ref);
-
-	CGContextRelease(bitmap_context);
-	CGColorSpaceRelease(color_space);
-
-	return sdl_surface;
-
-
-
+	return surface;
 }
 
 
@@ -398,14 +329,14 @@ static SDL_Surface* LoadImageFromRWops(SDL_RWops* rw_ops, CFStringRef uti_string
 
 	if(hint_dictionary != NULL)
 	{
-		CFRelease(hint_dictionary);
+		CFRelease(hint_dictionary);		
 	}
-
+	
 	if(NULL == image_source)
 	{
 		return NULL;
 	}
-
+	
 	image_ref = CreateCGImageFromCGImageSource(image_source);
 	CFRelease(image_source);
 
@@ -413,11 +344,11 @@ static SDL_Surface* LoadImageFromRWops(SDL_RWops* rw_ops, CFStringRef uti_string
 	{
 		return NULL;
 	}
-
+	
 	sdl_surface = Create_SDL_Surface_From_CGImage(image_ref);
 	CFRelease(image_ref);
 	return sdl_surface;
-
+	
 }
 
 
@@ -427,28 +358,54 @@ static SDL_Surface* LoadImageFromFile(const char* file)
 	SDL_Surface* sdl_surface = NULL;
 	CGImageSourceRef image_source = NULL;
 	CGImageRef image_ref = NULL;
-
+	
 	// First ImageIO
 	image_source = CreateCGImageSourceFromFile(file);
-
+	
 	if(NULL == image_source)
 	{
 		return NULL;
 	}
-
+	
 	image_ref = CreateCGImageFromCGImageSource(image_source);
 	CFRelease(image_source);
-
+	
 	if(NULL == image_ref)
 	{
 		return NULL;
 	}
-
+	
 	sdl_surface = Create_SDL_Surface_From_CGImage(image_ref);
 	CFRelease(image_ref);
-	return sdl_surface;
+	return sdl_surface;	
 }
 
+int IMG_InitJPG()
+{
+	return 0;
+}
+
+void IMG_QuitJPG()
+{
+}
+
+int IMG_InitPNG()
+{
+	return 0;
+}
+
+void IMG_QuitPNG()
+{
+}
+
+int IMG_InitTIF()
+{
+	return 0;
+}
+
+void IMG_QuitTIF()
+{
+}
 
 int IMG_isCUR(SDL_RWops *src)
 {
@@ -552,3 +509,4 @@ SDL_Surface* IMG_Load(const char *file)
 	return sdl_surface;
 }
 
+#endif /* defined(__APPLE__) && !defined(SDL_IMAGE_USE_COMMON_BACKEND) */
