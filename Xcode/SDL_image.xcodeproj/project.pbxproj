@@ -36,42 +36,42 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BECDF66C0761BA81005FE872 /* SDL.framework */;
+			remoteGlobalIDString = BECDF66C0761BA81005FE872;
 			remoteInfo = Framework;
 		};
 		B0C9CF14108DE46B00E7FA35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BECDF6B30761BA81005FE872 /* libSDL.a */;
+			remoteGlobalIDString = BECDF6B30761BA81005FE872;
 			remoteInfo = "Static Library";
 		};
 		B0C9CF16108DE46B00E7FA35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BECDF6BA0761BA81005FE872 /* libSDLmain.a */;
+			remoteGlobalIDString = BECDF6BA0761BA81005FE872;
 			remoteInfo = "Main Library";
 		};
 		B0C9CF18108DE46B00E7FA35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BECDF6BE0761BA81005FE872 /* Standard DMG */;
+			remoteGlobalIDString = BECDF6BE0761BA81005FE872;
 			remoteInfo = "Standard DMG";
 		};
 		B0C9CF1A108DE46B00E7FA35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = BECDF6C30761BA81005FE872 /* Developer Extras Package */;
+			remoteGlobalIDString = BECDF6C30761BA81005FE872;
 			remoteInfo = "Developer Extras Package";
 		};
 		B0C9CF1C108DE47500E7FA35 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B0C9CF09108DE46B00E7FA35 /* SDL.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = BECDF5FE0761BA81005FE872 /* Framework */;
+			remoteGlobalIDString = BECDF5FE0761BA81005FE872;
 			remoteInfo = Framework;
 		};
 		BE1FA74C07AF4C45004B6283 /* PBXContainerItemProxy */ = {
@@ -477,7 +477,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../../Frameworks",
+					"$(PROJECT_DIR)/../../Frameworks/Default",
+					"$(PROJECT_DIR)/../../Frameworks/Release",
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
 				);
@@ -597,7 +598,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../../Frameworks",
+					"$(PROJECT_DIR)/../../Frameworks/Default",
+					"$(PROJECT_DIR)/../../Frameworks/Release",
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
 				);
@@ -741,8 +743,6 @@
 				OTHER_LDFLAGS = (
 					"-seg1addr",
 					0x31000000,
-					"-ljpeg",
-					"-lpng",
 					"-lz",
 				);
 				PRODUCT_NAME = SDL_image;
@@ -789,8 +789,6 @@
 				OTHER_LDFLAGS = (
 					"-seg1addr",
 					0x31000000,
-					"-ljpeg",
-					"-lpng",
 					"-lz",
 				);
 				PRODUCT_NAME = SDL_image;
@@ -830,8 +828,6 @@
 				OTHER_LDFLAGS = (
 					"-seg1addr",
 					0x31000000,
-					"-ljpeg",
-					"-lpng",
 					"-lz",
 				);
 				PRODUCT_NAME = SDL_image;
@@ -1040,7 +1036,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../../Frameworks",
+					"$(PROJECT_DIR)/../../Frameworks/Default",
+					"$(PROJECT_DIR)/../../Frameworks/Release",
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
 				);
@@ -1064,7 +1061,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../../Frameworks",
+					"$(PROJECT_DIR)/../../Frameworks/Default",
+					"$(PROJECT_DIR)/../../Frameworks/Release",
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
 				);
@@ -1088,7 +1086,8 @@
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1)";
 				ARCHS_STANDARD_32_64_BIT_PRE_XCODE_3_1 = "x86_64 i386 ppc";
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(PROJECT_DIR)/../../Frameworks",
+					"$(PROJECT_DIR)/../../Frameworks/Default",
+					"$(PROJECT_DIR)/../../Frameworks/Release",
 					"$(HOME)/Library/Frameworks",
 					/Library/Frameworks,
 				);
