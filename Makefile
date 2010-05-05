@@ -53,6 +53,7 @@ clean:
 distclean: clean
 
 $(LIB): $(OBJECTS)
+	@$(RM) $@
 	$(QUIET_AR)$(AR) rcu $@ $^
 	$(QUIET_RANLIB)$(RANLIB) $@
 
